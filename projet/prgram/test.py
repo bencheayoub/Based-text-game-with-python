@@ -1,5 +1,17 @@
 import time
+import os
+import subprocess
 import random
+
+def clear():
+    input("Press Enter to clear the screen...")
+    if os.name == 'nt':  # Windows
+        subprocess.run('cls')
+    else:  # Unix/Linux/MacOS
+        subprocess.run('clear', shell=True)
+
+def lucky():
+   return random.randrange(0,100)
 
 def slowprint(sentence, x):
     for char in sentence:
@@ -7,42 +19,55 @@ def slowprint(sentence, x):
         time.sleep(x)
     print()
 
-print("In the continent of Aspada, 500 years ago, there lived 50 million humans under the servitude of 50 thousand beings called \"Kaidoz\", \nhybrids between humans and dragons possessing immense power.", 0.06)
-print("After two thousand years of enslavement and offering sacrifices to them, three wars were waged against them, all of which failed.", 0.06)
-print("Ten years after the last war against them, Mihawk, Sasaki, and Ryoma, the strongest men on the continent, decided to eliminate all the Kaidoz.", 0.06)
-print("Their power had terrorized the Kaidoz's realm, with each of them wielding a legendary weapon.", 0.06)
-print("Mihawk possessed a sword called Yuro, so powerful that it could cleave a whole mountain with one strike, crafted by the most skilled blacksmith in history.", 0.06)
-print("Sasaki had a gemstone named Anma that multiplied its wielder's power every time they received a blow.\n Legend has it that this gem was a gift from the King of Djinn to the sorcerer Tarish after he saved his daughter.\nAs for Ryoma, he had a glove called Sinistro with a hole on the palm, granting the ability to stop time and rewind it 20 seconds, increasing the wielder's strength.\nThis glove was stolen from the Timelems, creatures from the parallel world.", 0.06)
-print("When these weapons gathered with their powerful wielders, they managed to eradicate the Kaidoz in the Fourth Kaidoz War and sealed them in a jar placed inside a cave called \"Canavar,\" the same name as their leader,\ndue to the immense power of these weapons. However, the users of these weapons died a month later after suffering from excruciating pain.",0.06)
-
-
-
 class Bankai:
     def __init__(self):
         self.name = "Bankai"
         self.power = 100
         self.health = 100
+        self.defence = 30
+Bankai = Bankai()
 
-
-class Enemy:
-    def __init__(self, name="Unknown"):
+class jhon:
+    def __init__(self, name="jhon"):
         self.name = name
         self.power = 100
         self.health = 100
+        self.defence = 30
 
+class prince:
+    def __init__(self, name="prince of suduma"):
+        self.name = name
+        self.power = 50
+        self.health = 120
+        self.defence = 30
+
+def wronganswer(damage):
+    Bankai.health -= damage
+    print("Wrong answer")
+    print(f"your health now is {Bankai.health}")
+    if Bankai.health <= 0:
+        print("Game over! Your health reached zero.")
+        exit()
+def gard(damage):
+    Bankai.health -= damage
+    print("What do you think you're doing? He is the guard.")
+    print(f"your health now is {Bankai.health}")
+    if Bankai.health <= 0:
+        print("Game over! Your health reached zero.")
+        exit()
 
 def attack(attacker, defender):
-    player_damage = random.randint(0, 20) * attacker.power / 100
+    player_damage = lucky() * attacker.power / 100
     defender.health -= player_damage
-    enemy_damage = random.randint(0, 20) * defender.power / 100
+    enemy_damage = lucky() * defender.power / 100
     attacker.health -= enemy_damage
     print(f"{attacker.name} attacks and deals {player_damage} damage to {defender.name}!")
     print(f"{defender.name} attacks and deals {enemy_damage} damage to {attacker.name}!")
 
 
-def defend(defender):
-    enemy_damage = random.randint(0, 10) * defender.power / 100
-    defender.health -= enemy_damage
+def defend(attacker, defender):
+    enemy_damage = lucky() * attacker.power / 100
+    defender.health -= enemy_damage * defender.defence / 100
     print(f"{defender.name} defends and receives {enemy_damage} damage from the enemy!")
 
 
@@ -56,35 +81,64 @@ def fight(attacker, defender):
         if choice == 1:
             attack(attacker, defender)
         elif choice == 2:
-            defend(defender)
+            defend(defender, attacker)
+    if attacker.health > 0:
+        print(f"you beat {defender.name} and your health now is {attacker.health}")
+    else:
+        print(f"{defender.name} and his health is {defender.health}")
+        print("You lose")
+        exit()
+
+# the part of the story of the game
+
+print("In the continent of Aspada, 500 years ago, there lived 50 million humans under the servitude of 50 thousand beings called \"Kaidoz\", \nhybrids between humans and dragons possessing immense power.")
+print("After two thousand years of enslavement and offering sacrifices to them, three wars were waged against them, all of which failed.")
+print("Ten years after the last war against them, Mihawk, Sasaki, and Ryoma, the strongest men on the continent, decided to eliminate all the Kaidoz.")
+print("Their power had terrorized the Kaidoz's realm, with each of them wielding a legendary weapon.")
+print("Mihawk possessed a sword called Yuro, so powerful that it could cleave a whole mountain with one strike, crafted by the most skilled blacksmith in history.")
+print("Sasaki had a gemstone named Anma that multiplied its wielder's power every time they received a blow.\n Legend has it that this gem was a gift from the King of Djinn to the sorcerer Tarish after he saved his daughter.\nAs for Ryoma, he had a glove called Sinistro with a hole on the palm, granting the ability to stop time and rewind it 20 seconds, increasing the wielder's strength.\nThis glove was stolen from the Timelems, creatures from the parallel world.")
+print("When these weapons gathered with their powerful wielders, they managed to eradicate the Kaidoz in the Fourth Kaidoz War and sealed them in a jar placed inside a cave called \"Canavar,\" the same name as their leader,\ndue to the immense power of these weapons. However, the users of these weapons died a month later after suffering from excruciating pain.")
+time.sleep(5)
+subprocess.run('clear', shell=True)
 
 
 slowprint("Part One: Exiting Storm City", 0.06)
 slowprint("Our story begins with a person named Kyoku Bankai.", 0.06)
 slowprint("His mother's condition worsened until he summoned a doctor, who diagnosed her with a rare illness.", 0.06)
+print("From a remote village in the city of Sturm, he was raised by his mother and grandfather. \nHis grandfather taught him the martial arts, and he became very strong. \nAfter his grandfather passed away, his mother continued to take care of him.\nThis motivated him to keep learning combat skills so he could protect his mother.")
+time.sleep(5)
+
+# the first part of the game
+clear()
 
 choice = int(input(
     "What do you want to do? (1. Let's go to the market, 2. Let's go to the doctor, 3. Let's watch my mum die): "))
 
-if choice == 1:
-    slowprint("It's not the appropriate time to go shopping; we should save my mum.", 0.06)
-    current_location = "home"
-elif choice == 2:
-    slowprint("He must now bring the doctor to his mother. Let's go to the doctor.", 0.06)
-    current_location = "doctor"
-else:
-    slowprint("Your mum has died. Thank you for wasting your time watching your mum die without playing.", 0.06)
-    exit()
+while choice != 2:
+    if choice == 1:
+        slowprint("It's not the appropriate time to go shopping; we should save my mum.", 0.06)
+        current_location = "home"
+        choice = int(input())
+    elif choice == 2:
+        slowprint("He must now bring the doctor to his mother. Let's go to the doctor.", 0.06)
+        current_location = "doctor"
+    elif choice == 3:
+        slowprint("Your mum has died. Thank you for wasting your money watching your mum die without playing.", 0.06)
+        exit()
+    else :
+        slowprint("Invalid choice. Please try again.", 0.06)
+        choice = int(input())
 
 
-
-while True:
+while current_location != "doctor":
     print("You are at", current_location)
 
     if current_location == "home":
         direction = input("Where do you want to go? (doctor/market): ")
         if direction == "doctor":
             current_location = "doctor"
+            print("You have reached the doctor! let take the doctor to my mom.")
+            break
         elif direction == "market":
             current_location = "market"
         else:
@@ -101,14 +155,6 @@ while True:
         else:
             print("Please choose a valid direction")
 
-    elif current_location == "doctor":
-        print("You have reached the doctor!")
-        slowprint("The doctor sees your mother and gives a list of medicine ingredients:", 0.06)
-        slowprint(
-            "1. Chamomile herb (rosenbelle)\n2. Black elderberry herb (winterland)\n3. Ginseng herb (bummer)\n4. Echinacea herb (savana)\n5. Ginkgo Biloba herb (canavar)",
-            0.06)
-        break
-
     elif current_location == "dam":
         print("You are at the dam, you cannot go here.")
         direction = input("Where do you want to go? (sea/market): ")
@@ -124,6 +170,8 @@ while True:
         direction = input("Where do you want to go? (doctor/market): ")
         if direction == "doctor":
             current_location = "doctor"
+            print("You have reached the doctor! let take the doctor to my mom.")
+            break
         elif direction == "market":
             current_location = "market"
         else:
@@ -133,3 +181,233 @@ while True:
         print(
             "It's not the appropriate time to swim; we should save my mum. Let's go back to the dam to go to the doctor.")
         current_location = "dam"
+
+while current_location != "home":
+    print("You are at", current_location)
+
+    if current_location == "doctor":
+        direction = input("Where do you want to go? (home/sea1/sea2): ")
+        if direction == "home":
+            current_location = "home"
+            print("The doctor sees your mother and gives a list of medicine ingredients:")
+            print("1. Chamomile herb (rosenbelle)\n2. Black elderberry herb (winterland)\n3. Ginseng herb (bummer)\n4. Echinacea herb (savana)\n5. Ginkgo Biloba herb (canavar)")
+            break
+        elif direction == "sea1" or direction == "sea2":
+            print("It's not the appropriate time to swim; we should save my mum. Let's go back to the dam to go to the doctor.")
+        else:
+            print("Please choose a valid direction")
+
+clear()
+
+print("you face a group of bandits.\ndo you wanna fight them")
+choice = 1
+while choice != 2:
+    print("1.run\n2.fight")
+    choice = int(input())
+    if choice == 1:
+        Bankai.health = Bankai.health-1
+        print("you get attacked by them.")
+        print(f"your health now is {Bankai.health}")
+        if Bankai.health == 0:
+            exit()
+    elif choice == 2:
+        print("Great you defeated them; they were weak, but be careful, for the upcoming battles will not be easy.")
+        break
+    else :
+        print("Invalid choice. Please try again.")
+
+# the second part of the game
+jhon = jhon()
+prince = prince()
+def kill_jinbi():
+    print("He sat with his friend in his house and they talked about the old days and about their friend Martin, who was also one of his grandfather's students.")
+    print("The night was dark, and as they were talking, they heard a scream outside.")
+    goto_jinbi = False
+    while not goto_jinbi:
+        print("Do you want to go out to see what happened?")
+        choice = input("1. Yes\n2. No\n")
+        if choice == "1":
+            print("Bankai went to see, and he found the old man Jinbei lying on the ground, saying to three people wearing the official attire of the kingdom of Suduma, one of whom was its prince.")
+            print("The old man said, 'I know what you want from this marriage. You want to conquer the kingdom of Rosenbelle as you did with other kingdoms. I won't allow you to kill the king or his son.' The prince raised his sword in the air and struck him down.")
+            print("Bankai returned to John and told him what he had seen. He wasn't surprised by this evil, as it's a custom of the Suduma kingdom to do anything for the purpose of occupying other kingdoms. Now Bankai wants to save the kingdom of Rosenbelle.")
+            goto_jinbi = True
+        elif choice == "2":
+            print("The scream is still outside. I think you should go to see what happened.")
+        else:
+            print("Invalid choice. Please try again.")
+
+def market_rose():
+    print("He asked some of the merchants in the city if anyone knew the chamomile herb. No one knew its whereabouts, but a blacksmith directed him to an old man named Jinbi who knew a lot about herbs.")
+    print("Bankai went to the place of that old man, and he told him that he wouldn't tell him where it is until he answered his riddle. He said: \"He does not walk, yet he always comes. He has no eyes, yet he always sees. What is he?\"")
+    while True:
+        print("What is the correct answer:")
+        print("1. Candle\n2. Cloud\n3. Moon")
+        print("Warning: wrong answer takes 10 points of health.")
+        choice = input()
+        if choice == "1" or choice == "3":
+            wronganswer(10)
+        elif choice == "2":
+            print("Great! Your answer is correct.")
+            print("It is located in the king's palace and grows once every year, but you must wait three days to speak with him because his daughter's wedding will be held tomorrow.")
+            return True
+        else:
+            print("Invalid choice. Please try again.")
+
+current_location = "start"
+visit_john = False
+visit_market = False
+
+while not visit_john and not visit_market:
+    print("You are at", current_location)
+
+    if current_location == "start":
+        direction = input("Where do you want to go? (john/market): ").lower()
+        if direction == "john" and not visit_john:
+            current_location = "john"
+            print("Bankai meets John, his childhood friend and one of his grandfather's students, who managed to defeat him in his childhood.")
+            visit_john = True
+            if not visit_market:
+                print("John: We should go to the market now to get the chamomile herb.")
+                choice = 0
+                while choice not in ["1", "2"]:
+                    choice = input("1. Yes\n2. No\n")
+                    if choice == "1":
+                        if not visit_market:
+                            current_location = "market"
+                            visit_market = market_rose()
+                            if visit_market:
+                                kill_jinbi()
+                        elif visit_market:
+                            kill_jinbi()
+                    elif choice == "2":
+                        print("John: But you should go to save your mum.")
+                    else:
+                        print("Invalid choice. Please try again.")
+            else:
+                kill_jinbi()
+
+        elif direction == "market":
+            if not visit_market:
+                current_location = "market"
+                visit_market = market_rose()
+                if visit_market:
+                    kill_jinbi()
+            else:
+                print("We were here. What are you doing?")
+        else:
+            print("Please choose a valid direction")
+
+current_location = "john"
+
+while current_location != "castle":
+    direction = input("What is your next direction :\ncastle\nmarket\nstart\n")
+    if direction == "castle":
+        print("You are in the castle now.")
+        current_location = "castle"
+        break
+    elif direction == "market":
+        print("You are in the market now what is your next direction")
+        direction = input("Where do you want to go? (castle/start): ")
+
+        if direction == "start":
+            current_location = "start"
+        elif direction == "castle":
+            current_location = "castle"
+        else:
+            print("Please choose a valid direction")
+    elif direction == "start":
+        direction = input("Where do you want to go? (sea/castle/start): ")
+        if direction == "sea":
+            current_location = "sea"
+        elif direction == "market":
+            current_location = "market"
+        elif direction == "john":
+            current_location = "john"
+        else:
+            print("Please choose a valid direction")
+    elif direction == "sea":
+        print("It's not the appropriate time to swim; we should save my mum.")
+        current_location = "start"
+    elif direction == "john":
+        print("You are at john's home now what is your next direction")
+        current_location = "john"
+    else:
+        print("Please choose a valid direction")
+
+
+
+print("Gatekeeper: This place is not meant for people like you. Go away from here.")
+choice = 0
+while choice != 2:
+    choice = int(input("what do you want :\n1. fight him\n2. go to the window\n3. resign"))
+    if choice == 1:
+        gard(10)
+    elif choice == 3:
+        exit()
+    elif choice == 2:
+        break
+    else :
+        print("Invalid choice. Please try again.")
+
+current_location = "window"
+
+print("Bankai entered the castle through the back window without being seen by anyone. Now he has to search for the person who wants to assassinate the king and his daughter.")
+
+if Bankai.health >= 70:
+    print("Hint : they are in the basement.")
+
+location_count = {"wedding": 0, "kitchen": 0, "the store": 0, "basement": 0, "window": 0, "door": 0}
+print("Warning : if you go to the same place 3 times the guards will know that you're intruder ")
+current_location = "window"
+
+while current_location != "basement":
+    if current_location in location_count:
+        location_count[current_location] += 1
+        if location_count[current_location] > 3:
+            print("You have gone to the same place more than 3 times. You lose!")
+            exit()
+
+    if current_location == "wedding":
+        print("You are in the wedding now. And there is nothing here.")
+        direction = input("Where do you want to go? (window/kitchen): ")
+        if direction == "window":
+            current_location = "window"
+        elif direction == "kitchen":
+            current_location = "kitchen"
+        else:
+            print("Please choose a valid direction")
+
+    elif current_location == "window":
+        print("You are at the window now. And there is nothing here.")
+        direction = input("Where do you want to go? (wedding/kitchen/the store): ")
+        if direction == "wedding":
+            current_location = "wedding"
+        elif direction == "kitchen":
+            current_location = "kitchen"
+        elif direction == "the store":
+            current_location = "the store"
+        else:
+            print("Please choose a valid direction")
+
+    elif current_location == "kitchen":
+        print("You are in the kitchen now. And there is nothing here.")
+        direction = input("Where do you want to go? (door/wedding/basement/window): ")
+        if direction == "door":
+            current_location = "door"
+            print("The guard caught you. You lose!")
+            exit()
+
+if current_location == "basement":
+    print("")
+    print("Now you should fight him")
+    fight(Bankai, prince)
+
+print("Bankai saved the kingdom of Rosenbelle. \nAt first, everyone was in shock. As for the attendees from the kingdom of Suduma, it was a small delegation, and not many military figures were present to avoid arousing suspicion among the inhabitants of Rosenbelle. \nTherefore, the king of Suduma ordered the prince's body to be taken and the delegation to withdraw.")
+print("After this incident, the king invited Bancai to hear his story and was impressed by his bravery and determination to save his mother. \nThe king gave him the chamomile herb, and Bancai left the kingdom of Rosenbelle accompanied by his friend John.")
+choice = int(input("Do you wanna see a doctor before you go to Winterland ?\n1. Yes\n2. No\n"))
+if choice == 1:
+    Bankai.health = 100
+elif choice == 2:
+    pass
+else:
+    print("Invalid choice.")
