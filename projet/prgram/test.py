@@ -411,3 +411,109 @@ elif choice == 2:
     pass
 else:
     print("Invalid choice.")
+
+current_location = "start"
+winter = False
+puzzle = False
+
+def grave():
+    print("Bankai and John went to the cemetery where prominent figures are buried to search for Rasputin's tomb.\nThey found the guard at the cemetery gate, who did not allow them to enter.")
+    while not winter:
+        choice = input("What do you want to do now?\n1. fight\n2. search another way to get in")
+        if choice == 1:
+            gard(10)
+        elif choice == 2:
+            current_location = "door"
+            river = False
+            while not winter:
+                if current_location == "door":
+                    direction = input("What is your next direction: \nleft side\nback\nriver\n").lower()
+                    if direction == "left side":
+                        current_location = "left side"
+                    elif direction == "back":
+                        current_location = "back"
+                    elif direction == "river":
+                        current_location = "river"
+                elif current_location == "back":
+                    print("we can't resign now we should save your mum.")
+                    current_location = "door"
+                elif current_location == "river":
+                    if not river:
+                        Bankai.health = 500
+                        print("wow you get increase in your health")
+                    print("now there is nothing we to do here let's go back to the door")
+                elif current_location == "left side":
+                    print("They coincidentally met the king of the Winterland kingdom, the youngest king of the continent of Espada.\nHe shook Bankai's hand firmly and asked, 'Are you Bankai?' \nBankai answered, 'Yes.'\nThe king said, 'Thank you very much for what you did in the kingdom of Rosenbelle. I did not want their princess to marry the prince of Suduma.I hated him, and I also wanted to marry her myself.'")
+                    print("The king asked why they had come to the cemetery and how they knew about Suduma's plan.\nBancai told him about his story, his mother, and the death of the old man Jinbei.\nThe king said to them, 'Come, you will enter with me into the cemetery.\nI also want to go there to visit my father's grave.\nHe died in the Third Kaidos War twelve years ago, so I became the king of Winterland at the age of six.'")
+                    print("And after a series of conversations, they parted ways.")
+                    print("The king asked why they had come to the cemetery and how they knew about Suduma's plan.\nBankai told him about his story, his mother, and the death of the old man Jinbei.\nThe king said to them, 'Come, you will enter the cemetery with me.\nI also want to go there to visit my father's grave.\nHe died in the Third Kaidos War twelve years ago, so I became the king of Winterland at the age of six.'\nAfter a series of conversations, they parted ways.\n\nBankai asked his friend John if the former king of the kingdom took the throne a year after Rasputin's death and died twenty-three years later, doesn't that mean the current king is the son of the prince who tried to kill Rasputin?\n\nJohn replied, 'No, Rasputin didn't die.\nHe only faked his death and was the one who killed the former king of Winterland in the Third Kaidos War as revenge for attempting to kill him.\nHe disappeared afterward.\n\nNot only that, but even the legends from the Kaidos War did not die from any illness.\nIt's just a myth to prevent anyone from searching for the legendary weapons.\nDo you remember Jinbei, who died in the kingdom of Rosenbelle at the hands of the prince of Suduma?'\n\nBankai: 'Yes, what about him?'\n\nJohn: 'He was Ryoma, the user of the Sinestro Glove, and he weakened due to overusing his power, making it easy for the prince of Suduma to kill him.\nThe same happened with the others.\nAlso, Bankai, I want to tell you something about Mihawk, the strongest among them.\nHe is your father.'\n\nBankai couldn't comprehend what his friend said at first and asked in shock, 'How did you know all this?'\n\nJohn replied, 'My father told me this.'\n\nBankai went to Rasputin's fake grave and took the black elderberry herb.\n\nBankai and John spent the night in Winterland.\nBankai couldn't sleep because he was thinking about his father, Mihawk, and why he never returned.\nIn the morning, they set off to their next destination, the city of Bummer.")
+
+        else:
+            print("Invalid choice. please try again")
+
+while not winter and not puzzle:
+
+    if current_location == "graveyard":
+        if not puzzle:
+            print("There is nothing we can do here.")
+            direction = input("What is your next direction: \ncastle\nsea\nstart\n").lower()
+            if direction == "sea":
+                current_location = "sea"
+            elif direction == "start":
+                current_location = "start"
+            elif direction == "castle":
+                current_location = "castle"
+            else:
+                print("Please choose a valid direction")
+        else:
+            grave()
+
+    elif current_location == "sea":
+        print("It's not the appropriate time to swim; we should save my mum.")
+        current_location = "start"
+
+    elif current_location == "start":
+        print("You are at the start.")
+        direction = input("What is your next direction: \nmarket\nsea\ngraveyard\n").lower()
+        if direction == "market":
+            current_location = "market"
+        elif direction == "sea":
+            current_location = "sea"
+        elif direction == "graveyard":
+            current_location = "graveyard"
+
+    elif current_location == "market":
+        print("You are at the market.")
+        if not puzzle:
+            print("After a long search, Bankai finally found the black elderberry herb, but it came at a high price. \nSo he asked the seller if there was another way to obtain this herb.")
+            print("The seller : \"Yes, there is a way.\nIt grows above the Devil's Head Hole, where the demon died from the city's cold.\"")
+            print("what is the correct answer")
+            while not puzzle:
+                choice = int(input("1. Napoleon's tomb\n2. Queen Elizabeth's tomb\n3. Pharaoh's tomb\n4. Ramses II\n5. Rasputin's tomb\n"))
+                if choice == 1 or choice == 2 or choice == 3 or choice == 4:
+                    wronganswer(15)
+                elif choice == 5:
+                    print("It's the correct answer")
+                    print("so now we should go to the graveyard")
+                    puzzle = True
+                else:
+                    print("Invalid choice Please try again")
+            direction = input("What is your next direction: \nstart\ncastle\n").lower()
+            if direction == "castle":
+                current_location = "castle"
+            elif direction == "start":
+                current_location = "start"
+            else:
+                print("Please choose a valid direction")
+
+    elif current_location == "castle":
+        direction = input("What is your next direction: \ngraveyard\nmarket\n").lower()
+        if direction == "graveyard":
+            current_location = "graveyard"
+        elif direction == "market":
+            current_location = "market"
+        else:
+            print("Please choose a valid direction")
+    else:
+        print("Please choose a valid direction")
+#the part 4 of the game
