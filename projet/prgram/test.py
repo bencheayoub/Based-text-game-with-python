@@ -132,6 +132,14 @@ class lizard:
 
 lizard = lizard()
 
+class monsterY:
+    def __init__(self, name="The monster of Yskina"):
+        self.name = name
+        self.power = 30000
+        self.health = 100000
+        self.defence = 34
+monsterY = monsterY()
+
 
 class Bankai0:
     def __init__(self, name="Bankai with form of Kaidoz"):
@@ -169,8 +177,8 @@ Bankai2 = Bankai2()
 class Bankai3:
     def __init__(self, name="Bankai with the third form of Kaidoz"):
         self.name = name
-        self.power = 100000
-        self.health = 40000
+        self.power = 50000
+        self.health = 100000
         self.defence = 50
 
 
@@ -625,9 +633,29 @@ while current_location != "basement":
             current_location = "door"
             print("The guard caught you. You lose!")
             exit()
+        elif direction == "wedding":
+            current_location = "wedding"
+        elif direction == "basement":
+            current_location = "basement"
+        elif direction == "window":
+            current_location = "window"
+        else:
+            print("Please choose a valid direction")
+    elif current_location == "the store":
+        print("You are in the store now. And there is nothing here.")
+        direction = input("Where do you want to go? (basement/window): ")
+        if direction == "basement":
+            current_location = "basement"
+        elif direction == "window":
+            current_location = "window"
+        else:
+            print("Please choose a valid direction")
+    elif current_location == "basement":
+        break
+
 
 if current_location == "basement":
-    print("")
+    print("You are at the Basement now and you find the prince of sudumma")
     print("Now you should fight him")
     fight(Bankai, prince, 100, 100, 120)
 
@@ -933,6 +961,101 @@ while current_location != "doctor":
         print("Please choose a valid direction")
 
 print("Doctor: What disease did your mother suffer from?\nBankai: The doctor in Sturorm didn't want to tell me the name of the disease.\nDoctor: The medicine needs Ginseng herb, and also what else? Tell me everything about your journey.\nAfter Bankai told him about the other ingredients and how he managed to obtain them, the doctor understood his condition.\nDoctor: You are the son of the legend Mihawk, then. I see. Your mother is afflicted with Anarogia, one of the diseases that emerged after the Kaidoz war.\nAs for your power, it's a curse upon you to control it. You need to take the Sinestro glove and insert a stone into the hole in its palm.\nLuckily, I have that stone, but you will find the glove in the Yaskeena Cave located between Savana and Canavar Forest.\nYou won't find anyone to ask in Canavar, so I'll tell you where to find the last herb, Ginko Biloba.\nIt's in the Canavar Cave in the middle of the forest, inside the waterfall.\nBut be warned, your fight there will be the toughest, as its guardian won't spare you.\nAlso, as you know, the Kaidoz jar they sealed is there.\nThen he asked Bankai to leave and told his friend to stay to say a few words.\nDoctor to Martin: Keep your eyes on your friend, and don't let him fight until he finds the glove; he might die while fighting.\nYou have to fight in his place. He gave him medicine and continued, saying: Drink this medicine to heal your wounds; you are stronger than you think.\nDon't suppress your power and defend your friend with it.\nAfter these words, Martin felt that John's death was because of him.\nIf he had been stronger, he would have defeated Ares in the second round, and John wouldn't have fought in the semi-final.\nBut soon the remorse vanished, for now, he had to save his friend's mother.")
+
+#the fifth part of the game
+
+current_location = "start"
+print("you should go to Yaskina cave to get the sinestro golve  ")
+
+Yaskina = False
+Canavar = False
+
+while not Yaskina and not Canavar:
+
+    if current_location == "start":
+        direction = input("Where do you want to go? (mushroom/yaskina").lower
+        if direction == "mushroom":
+            current_location = "mushroom"
+        elif direction == "yaskina":
+            current_location = "yaskina"
+        else:
+            print("Please choose a valid direction")
+    elif current_location == "mushroom":
+        while choice != 1 or choice != 2:
+            choice = int(input("Do you wanna eat the mushroom:\n1. Yes\n2. No"))
+            if choice == 1:
+                print("Ooh this mushroom decrease you health.")
+            elif choice == 2:
+                pass
+            else:
+                print("Invalid choice please try again")
+        direction = input("Where do you want to go? (canavar/start").lower
+        if direction == "canavar":
+            current_location = "canavar"
+        elif direction == "start":
+            current_location = "start"
+        else:
+            print("Please choose a valid direction")
+    elif current_location == "yaskina":
+        print("You meet the guard of the cave he is a giant monster")
+        print("Martin wanna fight the monster by himself")
+        time.sleep(1)
+        print("Martin couldn't beat the monster and he need your help")
+        print("Now you should fight the monster by yourself")
+        fightl(Bankai,monsterY)
+        fight(Bankai3,monsterY, 100000, 50000, 100000)
+        Yaskina = True
+
+
+    elif current_location == "canavar":
+        if not Yaskina:
+            print("There nothing we can do here i think we should go to Yaskina cave first as the doctor said")
+        else:
+            print(
+                "The monster was finally defeated, and Bankai took the gauntlet.\nWhen he placed the stone into the hole in the palm of his hand, a lightning bolt struck his hand, causing him great pain.\nHowever, he felt an immense power surge through him, doubling his strength.\nAfter taking hits from that monster, he now feels that he can defeat any being.\nThat is what he believes.")
+            print(
+                "In their journey to find the final element, they faced many challenges on their way to the cave.\nThey fought some monsters from the Kingdom of Bits, a realm inhabited entirely by biological monsters.\nThe Kingdom of Suduma conducts experiments on them after having killed their king and seized their lands.\nOnly a few humans remain in that place, hiding in the forest of Canavar, while some have migrated to other kingdoms, with their total number not exceeding two hundred.\nBankai encountered some of the residents, giving them food and protecting some from the Bits monsters that were chasing them.\n")
+            print(
+                "Eventually, Bankai reached a river and followed it to its source at a waterfall inside the cave.\nFinally, they arrived at the Canavar Cave, where everything would end, and they would save the mother (or so he believes).\n")
+            print(
+                "Upon entering the cave, he found it very spacious with no guards at the entrance, suggesting they were inside.\nAfter walking a bit, they came across three diverging paths.\nOne of these paths leads to the jar containing the Kaidos monsters; it is unguarded but anyone who enters it will be cursed and never leave the cave alive.\nAnother path leads to the herb the hero seeks, and the third path leads to an endless circular loop from which no one can escape.\n")
+            print(
+                "1. The first path is marked, 'The path that ascends to the yellow sky is the path that restores life to the dead.'\n")
+            print("2. The second path is marked, 'He who sees the unseen will find the key to enter the illusion.'")
+            print(
+                "3. The third path is marked, 'He who seeks salvation, let him follow the lone star in the sea of darkness.'")
+        while choice != 1 or choice != 2:
+            choice = int(input("Do you wanna hear the discussion between Bankai and Martin :\n1. Yes\n2. No"))
+            if choice == 1:
+                pass
+            elif choice == 2:
+                pass
+            else:
+                print("Invalid choice please try again")
+        if choice == 1:
+            print("Martin said, 'What will you choose, Bankai?' Bankai replied, 'I don’t know. If we choose the wrong path, we might die.' Martin said, 'The first path revives the dead. Don’t you think that might be it since the herb is medicinal and can heal someone who is about to die? What does the term 'yellow sky' mean?' Bankai responded, 'I’m not sure, but it might refer to the Kaidos monsters.' Martin said, 'What about the second path? I think the key to enter the illusion might refer to the endless loop.' Bankai replied, 'But it could also mean the Kaidos monsters.' Martin said, 'Or perhaps it refers to the disease we want to cure your mother from.' Bankai asked, 'What does salvation mean in the context of the third path?' Martin replied, 'I think it’s our way out of this predicament and finding the herb.' Bankai said, 'Or maybe it’s telling those inside that their salvation is impossible, meaning it’s the endless loop.' Martin concluded, 'Or perhaps it means the salvation of the Kaidos monsters from their prison.'")
+        else:
+            pass
+        while choice != 1 or choice != 2 or choice != 3:
+            choice = int(input("So what is your choice : \n1. First path\n2. Second path\n3. Third path"))
+            if choice == 1:
+                print("Your choice was successful. The first path was the correct answer")
+            elif choice == 2:
+                print(
+                    "Your choice was wrong. This path leads to the Kaidos monsters, and now they are free. You have lost")
+                exit()
+            elif choice == 3:
+                print(
+                    "Your choice was wrong. This path leads to the endless loop, and now you cannot escape from it. You have lost.")
+                exit()
+            else:
+                print("Invalid choice please try again.")
+
+        print("Bankai took the herb and was overjoyed; their journey was finally over.\nAt last, he would save his mother.\n")
+        print("However, his friend Martin felt something strange.\n")
+        print("Didn't that doctor from the Kingdom of Savana tell them that the cave had strong guards?\nHe hadn't seen any guards since they entered the cave, but he didn't want to worry Bankai now.\nThey needed to get out of there.\n")
+        print("He hadn't seen any guards since they entered the cave, but he didn't want to worry Bankai now.\nThey needed to get out of there.\n")
+        print("Bankai and his friend moved from the spot, and when they reached the place where they had chosen one of the three paths, they found a man with huge muscles lying on the ground.\nBeside him were two men: one holding a knife who looked strong, and the other holding a large jar.\nThey turned towards him, and one of them said, 'Finally, your silly journey is over. Your end is now.'\nBankai recognized them; it was Ares and his friend John.")
 
 #        else:print("Please choose a valid direction")
 # print("You have reached the doctor!")
