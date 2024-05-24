@@ -2,7 +2,7 @@ import time
 import os
 import subprocess
 import random
-
+from Arts import *
 
 def clear():
     input("Press Enter to clear the screen...")
@@ -313,9 +313,19 @@ def fightl(attacker, defender):
 
 
 # the part of the story of the game
+print(rockstar)
+time.sleep(5)
+subprocess.run('clear', shell=True)
+print(present)
+time.sleep(3)
+subprocess.run('clear', shell=True)
+print(castel)
+print(cannavar)
+time.sleep(5)
+subprocess.run('clear', shell=True)
 
-print(
-    "In the continent of Aspada, 500 years ago, there lived 50 million humans under the servitude of 50 thousand beings called \"Kaidoz\", \nhybrids between humans and dragons possessing immense power.")
+slowprint(
+    "In the continent of Aspada, 500 years ago, there lived 50 million humans under the servitude of 50 thousand beings called \"Kaidoz\", \nhybrids between humans and dragons possessing immense power.", 0.06)
 print(
     "After two thousand years of enslavement and offering sacrifices to them, three wars were waged against them, all of which failed.")
 print(
@@ -328,13 +338,13 @@ print(
 print(
     "When these weapons gathered with their powerful wielders, they managed to eradicate the Kaidoz in the Fourth Kaidoz War and sealed them in a jar placed inside a cave called \"Canavar,\" the same name as their leader,\ndue to the immense power of these weapons. However, the users of these weapons died a month later after suffering from excruciating pain.")
 time.sleep(5)
-subprocess.run('clear', shell=True)
+clear()
 
-print("Part One: Exiting Storm City", 0.06)
-print("Our story begins with a person named Kyoku Bankai.", 0.06)
-print("His mother's condition worsened until he summoned a doctor, who diagnosed her with a rare illness.", 0.06)
+print("Part One: Exiting Storm City")
+print("Our story begins with a person named Kyoku Bankai.")
 print(
     "From a remote village in the city of Sturm, he was raised by his mother and grandfather. \nHis grandfather taught him the martial arts, and he became very strong. \nAfter his grandfather passed away, his mother continued to take care of him.\nThis motivated him to keep learning combat skills so he could protect his mother.")
+print("Years later, her mother's condition worsened and she developed a rare disease.")
 time.sleep(5)
 current_location = "home"
 # the first part of the game
@@ -343,24 +353,24 @@ choice = int(input(
 
 while choice != 2:
     if choice == 1:
-        print("It's not the appropriate time to go shopping; we should save my mum.", 0.06)
+        print("It's not the appropriate time to go shopping; we should save my mum.")
         current_location = "home"
         choice = int(input())
     elif choice == 2:
-        print("He must now bring the doctor to his mother. Let's go to the doctor.", 0.06)
+        print("He must now bring the doctor to his mother. Let's go to the doctor.")
         current_location = "home"
     elif choice == 3:
-        print("Your mum has died. Thank you for wasting your money watching your mum die without playing.", 0.06)
+        print("Your mum has died. Thank you for wasting your money watching your mum die without playing.")
         exit()
     else:
-        slowprint("Invalid choice. Please try again.", 0.06)
+        print("Invalid choice. Please try again.")
         choice = int(input())
 
 while current_location != "doctor":
     print("You are at", current_location)
 
     if current_location == "home":
-        direction = input("Where do you want to go? (doctor/market): ")
+        direction = input("Where do you want to go? (doctor/market): ").lower()
         if direction == "doctor":
             current_location = "doctor"
             print("You have reached the doctor! let take the doctor to my mom.")
@@ -371,7 +381,7 @@ while current_location != "doctor":
             print("Please choose a valid direction")
 
     elif current_location == "market":
-        direction = input("Where do you want to go? (sea/dam/home): ")
+        direction = input("Where do you want to go? (sea/dam/home): ").lower()
         if direction == "sea":
             current_location = "sea2"
         elif direction == "dam":
@@ -383,7 +393,7 @@ while current_location != "doctor":
 
     elif current_location == "dam":
         print("You are at the dam, you cannot go here.")
-        direction = input("Where do you want to go? (sea/market): ")
+        direction = input("Where do you want to go? (sea/market): ").lower()
         if direction == "sea":
             current_location = "sea3"
         elif direction == "market":
@@ -393,7 +403,7 @@ while current_location != "doctor":
 
     elif current_location == "sea2":
         print("It's not the appropriate time to swim; we should save my mum.")
-        direction = input("Where do you want to go? (doctor/market): ")
+        direction = input("Where do you want to go? (doctor/market): ").lower()
         if direction == "doctor":
             current_location = "doctor"
             print("You have reached the doctor! let take the doctor to my mom.")
@@ -412,7 +422,7 @@ while current_location != "home":
     print("You are at", current_location)
 
     if current_location == "doctor":
-        direction = input("Where do you want to go? (home/sea1/sea2): ")
+        direction = input("Where do you want to go? (home/sea1/sea2): ").lower()
         if direction == "home":
             current_location = "home"
             print("The doctor sees your mother and gives a list of medicine ingredients:")
@@ -444,7 +454,7 @@ while choice != 2:
     else:
         print("Invalid choice. Please try again.")
 
-
+clear()
 # the second part of the game
 
 def kill_jinbi():
@@ -489,93 +499,116 @@ def market_rose():
         else:
             print("Invalid choice. Please try again.")
 
-
 current_location = "start"
 visit_john = False
 visit_market = False
 
-while not visit_john and not visit_market:
+while visit_john == False or visit_market == False:
     print("You are at", current_location)
 
     if current_location == "start":
         direction = input("Where do you want to go? (john/market): ").lower()
-        if direction == "john" and not visit_john:
+        if direction == "john":
             current_location = "john"
-            print(
-                "Bankai meets John, his childhood friend and one of his grandfather's students, who managed to defeat him in his childhood.")
-            visit_john = True
-            if not visit_market:
-                print("John: We should go to the market now to get the chamomile herb.")
-                choice = 0
-                while choice not in ["1", "2"]:
-                    choice = input("1. Yes\n2. No\n")
-                    if choice == "1":
-                        if not visit_market:
-                            current_location = "market"
-                            visit_market = market_rose()
-                            if visit_market:
-                                kill_jinbi()
-                        elif visit_market:
-                            kill_jinbi()
-                    elif choice == "2":
-                        print("John: But you should go to save your mum.")
-                    else:
-                        print("Invalid choice. Please try again.")
-            else:
-                kill_jinbi()
-
-        elif direction == "market":
-            if not visit_market:
-                current_location = "market"
-                visit_market = market_rose()
-                if visit_market:
-                    kill_jinbi()
-            else:
-                print("We were here. What are you doing?")
-        else:
-            print("Please choose a valid direction")
-
-current_location = "john"
-
-while current_location != "castle":
-    direction = input("What is your next direction :\ncastle\nmarket\nstart\n")
-    if direction == "castle":
-        print("You are in the castle now.")
-        current_location = "castle"
-        break
-    elif direction == "market":
-        print("You are in the market now what is your next direction")
-        direction = input("Where do you want to go? (castle/start): ")
-
-        if direction == "start":
-            current_location = "start"
-        elif direction == "castle":
-            current_location = "castle"
-        else:
-            print("Please choose a valid direction")
-    elif direction == "start":
-        direction = input("Where do you want to go? (sea/castle/start): ")
-        if direction == "sea":
-            current_location = "sea"
         elif direction == "market":
             current_location = "market"
+        else:
+            print("Please choose a valid direction")
+    elif current_location == "john":
+        if not visit_john:
+            print(
+                "Bankai meets John, his childhood friend and one of his grandfather's students, who managed to defeat him in his childhood.\n And john told john about the reason why he is here.")
+            visit_john = True
+        else:
+            pass
+        if not visit_market:
+            print("John: We should go to the market now to get the chamomile herb.")
+            choice = 0
+            while choice != 1:
+                choice = int(input("Do you wanna go to the market: \n1. Yes\n2. No\n"))
+                if choice == 1:
+                    current_location = "market"
+                elif choice == 2:
+                    print("John: But you should go to save your mum.")
+                else:
+                    print("Invalid choice. Please try again.")
+        else:
+            kill_jinbi()
+    elif current_location == "market":
+        if visit_market == False:
+            visit_market = market_rose()
+            direction = input("Where do you want to go? (john/start): ").lower()
+            if direction == "john":
+                current_location = "john"
+            elif direction == "start":
+                current_location = "start"
+            else:
+                print("Please choose a valid direction")
+        else:
+            print("We were here. What are you doing?")
+            direction = input("Where do you want to go? (john/start): ").lower()
+            if direction == "john":
+                current_location = "john"
+            elif direction == "start":
+                current_location = "start"
+            else:
+                print("Please choose a valid direction")
+clear()
+while current_location != "castel":
+    if current_location == "start":
+        direction = input("What is your next direction: \njohn\nsea\ncastel").lower()
+        if direction == "sea":
+            current_location = "sea"
+        elif direction == "castel":
+            current_location = "castel"
         elif direction == "john":
             current_location = "john"
         else:
             print("Please choose a valid direction")
-    elif direction == "sea":
+
+    elif current_location == "sea":
         print("It's not the appropriate time to swim; we should save my mum.")
         current_location = "start"
-    elif direction == "john":
-        print("You are at john's home now what is your next direction")
-        current_location = "john"
+
+    elif current_location == "market":
+        direction = input("What is your next direction: \ncastel\nstart\nsea\n").lower()
+        if direction == "castel":
+            current_location = "castel"
+        elif direction == "start":
+            current_location = "start"
+        elif direction == "sea":
+            current_location = "sea"
+        else:
+            print("Please choose a valid direction")
+
+    elif current_location == "john":
+        direction = input("What is your next direction: \ncastel\nstart\n").lower()
+        if direction == "castel":
+            current_location = "castel"
+        elif direction == "start":
+            current_location = "start"
+        else:
+            print("Please choose a valid direction")
+
+    elif current_location == "restaurant":
+        print("I heard people talking about a competition in a place called Hal.")
+        direction = input("What is your next direction: start\nhal\n").lower()
+        if direction == "start":
+            current_location = "start"
+        elif direction == "hal":
+            current_location = "hal"
+        else:
+            print("Please choose a valid direction")
+
+    elif current_location == "castel":
+       break
     else:
         print("Please choose a valid direction")
-
+clear()
 print("Gatekeeper: This place is not meant for people like you. Go away from here.")
 choice = 0
 while choice != 2:
-    choice = int(input("what do you want :\n1. fight him\n2. go to the window\n3. resign"))
+    choice = int(input("what do you want :\n1. fight him\n2. go to the window\n3. resign\n"))
     if choice == 1:
         gard(10)
     elif choice == 3:
@@ -596,7 +629,7 @@ if Bankai.health >= 70:
 location_count = {"wedding": 0, "kitchen": 0, "the store": 0, "basement": 0, "window": 0, "door": 0}
 print("Warning : if you go to the same place 3 times the guards will know that you're intruder ")
 current_location = "window"
-
+clear()
 while current_location != "basement":
     if current_location in location_count:
         location_count[current_location] += 1
@@ -653,7 +686,7 @@ while current_location != "basement":
     elif current_location == "basement":
         break
 
-
+clear()
 if current_location == "basement":
     print("You are at the Basement now and you find the prince of sudumma")
     print("Now you should fight him")
@@ -670,18 +703,16 @@ elif choice == 2:
     pass
 else:
     print("Invalid choice.")
-
+clear()
 #the part 3 of the game
 current_location = "start"
-winter = False
-puzzle = False
-
 
 def grave():
+    winter = False
     print(
         "Bankai and John went to the cemetery where prominent figures are buried to search for Rasputin's tomb.\nThey found the guard at the cemetery gate, who did not allow them to enter.")
-    while not winter:
-        choice = input("What do you want to do now?\n1. fight\n2. search another way to get in")
+    while winter == False:
+        choice = int(input("What do you want to do now?\n1. fight\n2. search another way to get in\n"))
         if choice == 1:
             gard(10)
         elif choice == 2:
@@ -703,7 +734,10 @@ def grave():
                     if not river:
                         Bankai.health = 500
                         print("wow you get increase in your health")
-                    print("now there is nothing we to do here let's go back to the door")
+                        current_location = "door"
+                    else:
+                        current_location = "door"
+                        print("now there is nothing we to do here let's go back to the door")
                 elif current_location == "left side":
                     print(
                         "They coincidentally met the king of the Winterland kingdom, the youngest king of the continent of Espada.\nHe shook Bankai's hand firmly and asked, 'Are you Bankai?' \nBankai answered, 'Yes.'\nThe king said, 'Thank you very much for what you did in the kingdom of Rosenbelle. I did not want their princess to marry the prince of Suduma.I hated him, and I also wanted to marry her myself.'")
@@ -713,13 +747,15 @@ def grave():
                     print(
                         "The king asked why they had come to the cemetery and how they knew about Suduma's plan.\nBankai told him about his story, his mother, and the death of the old man Jinbei.\nThe king said to them, 'Come, you will enter the cemetery with me.\nI also want to go there to visit my father's grave.\nHe died in the Third Kaidos War twelve years ago, so I became the king of Winterland at the age of six.'\nAfter a series of conversations, they parted ways.\n\nBankai asked his friend John if the former king of the kingdom took the throne a year after Rasputin's death and died twenty-three years later, doesn't that mean the current king is the son of the prince who tried to kill Rasputin?\n\nJohn replied, 'No, Rasputin didn't die.\nHe only faked his death and was the one who killed the former king of Winterland in the Third Kaidos War as revenge for attempting to kill him.\nHe disappeared afterward.\n\nNot only that, but even the legends from the Kaidos War did not die from any illness.\nIt's just a myth to prevent anyone from searching for the legendary weapons.\nDo you remember Jinbei, who died in the kingdom of Rosenbelle at the hands of the prince of Suduma?'\n\nBankai: 'Yes, what about him?'\n\nJohn: 'He was Ryoma, the user of the Sinestro Glove, and he weakened due to overusing his power, making it easy for the prince of Suduma to kill him.\nThe same happened with the others.\nAlso, Bankai, I want to tell you something about Mihawk, the strongest among them.\nHe is your father.'\n\nBankai couldn't comprehend what his friend said at first and asked in shock, 'How did you know all this?'\n\nJohn replied, 'My father told me this.'\n\nBankai went to Rasputin's fake grave and took the black elderberry herb.\n\nBankai and John spent the night in Winterland.\nBankai couldn't sleep because he was thinking about his father, Mihawk, and why he never returned.\nIn the morning, they set off to their next destination, the city of Bummer.")
                     winter = True
-
-
+                    break
+        if winter == True:
+            break
         else:
             print("Invalid choice. please try again")
 
-
-while not winter and not puzzle:
+puzzle = False
+winter = False
+while winter == False or puzzle == False:
 
     if current_location == "graveyard":
         if not puzzle:
@@ -735,6 +771,7 @@ while not winter and not puzzle:
                 print("Please choose a valid direction")
         else:
             grave()
+            break
 
     elif current_location == "sea":
         print("It's not the appropriate time to swim; we should save my mum.")
@@ -758,7 +795,7 @@ while not winter and not puzzle:
             print(
                 "The seller : \"Yes, there is a way.\nIt grows above the Devil's Head Hole, where the demon died from the city's cold.\"")
             print("what is the correct answer")
-            while not puzzle:
+            while puzzle == False:
                 choice = int(input(
                     "1. Napoleon's tomb\n2. Queen Elizabeth's tomb\n3. Pharaoh's tomb\n4. Ramses II\n5. Rasputin's tomb\n"))
                 if choice == 1 or choice == 2 or choice == 3 or choice == 4:
@@ -769,13 +806,13 @@ while not winter and not puzzle:
                     puzzle = True
                 else:
                     print("Invalid choice Please try again")
-            direction = input("What is your next direction: \nstart\ncastle\n").lower()
-            if direction == "castle":
-                current_location = "castle"
-            elif direction == "start":
-                current_location = "start"
-            else:
-                print("Please choose a valid direction")
+        direction = input("What is your next direction: \nstart\ncastle\n").lower()
+        if direction == "castle":
+            current_location = "castle"
+        elif direction == "start":
+            current_location = "start"
+        else:
+            print("Please choose a valid direction")
 
     elif current_location == "castle":
         direction = input("What is your next direction: \ngraveyard\nmarket\n").lower()
@@ -787,6 +824,8 @@ while not winter and not puzzle:
             print("Please choose a valid direction")
     else:
         print("Please choose a valid direction")
+clear()
+
 #the part 4 of the game
 print(
     "After what happened in the kingdom of Winterland, Bankai and John arrived in the city of Bummer.\nThis city was completely different from the ones they had been in before. It was not as beautiful as the kingdom of Rosenbelle or Winterland. It was inhabited by people resembling Vikings.\nIt is the only city that rejected royal rule, and here, the strong rule.")
@@ -794,7 +833,7 @@ print(
 current_location = "start"
 while current_location != "hal":
     if current_location == "start":
-        direction = input("What is your next direction: \nsea\nmarket\nrestaurant").lower()
+        direction = input("What is your next direction: \nsea\nmarket\nrestaurant\n").lower()
         if direction == "sea":
             current_location = "sea"
         elif direction == "market":
@@ -848,7 +887,7 @@ while current_location != "hal":
         break
     else:
         print("Please choose a valid direction")
-
+clear()
 print("Bankai and John registered for this competition. Participants from other kingdoms also joined.")
 print(
     "The rules of the competition are simple: there are 32 fighters and 5 rounds.\nEach fighter who wins advances to the next match.\nAnyone who falls to the ground, exits the ring, or surrenders loses.\nAll weapons are allowed.")
@@ -856,25 +895,30 @@ print(
     "The draw results revealed that Bankai and John were in completely different brackets, meaning they wouldn't face each other until the final. \nhey were happy with this outcome, but their joy didn't last long.\nBankai discovered that he would face the champion of the previous seven competitions, named El-Haouari, in his first round.\nAs for John, he would face one of the strongest individuals from the kingdom of Suduma, named Ares, if he made it to the semifinals.\nAres was a formidable warrior, his strength comparable to one of the three legends.\nHe wore iron armor similar to that of knights, which earned him the nickname 'The Armored.' Only his red eyes were visible from his face.")
 print(
     "Before the competition began, Bankai looked at the list of contestants and found a familiar name—yes, it was their third friend, Martin, who had also been a student of his grandfather.\nHe went to look for him in the competitors' waiting room and found him.\nYes, it was indeed Martin, their childhood friend. Finally, the trio was reunited once again.")
+clear()
 print("Round One")
 fight(Bankai, haouari, 500, 300, 250)
 print("John and Martin easily defeated their opponents.")
 print(
     "The audience was surprised by what happened as El-Haouari, the legend of Hal, lost in the first round to a wanderer whose goal was neither the money nor the title of the Hal competition, but only that herb.")
+clear()
 print("Round Two")
 fight(Bankai, enemy, 500, 300, 250)
 print(
     "The fights were easy for both Banنai and John; they each won, attracting even more attention.\nHowever, two contestants from the kingdoms of Shturm and Rosenbelle easily defeated our men.")
+clear()
 print("Round Tree")
 fight(Bankai, strenemy, 750, 500, 500)
 print(
     "During the break, John and Bankai were with their friend Martin, reminiscing about their adventures and childhood days.\nSuddenly, Ares, who would face John in the next round, approached them.\nAfter learning that John was Bancai's friend who had killed their prince a few days ago, Ares said to him, 'You must withdraw and let me face Bancai.\nOtherwise, I will kill your friend in the final round, and then I will kill your sick friend.' At first, John refused, but Ares whispered something in his ear.\nJohn's face turned pale, and he agreed to it.")
+clear()
 print("Round Four")
 fight(Bankai, enemy, 750, 500, 250)
 print(
     "Bankai won his match as usual, but on John's side, he saw his friend withdraw as soon as he entered the arena.\nBankai thought John withdrew because he was afraid of suffering the same fate as their friend Martin, or to protect him and prevent Ares from killing him when they face off in the final.\nHowever, John had a secret that no one knew, not even his friend Bancai.\nAres said to him, 'You made the right choice,' drew his sword, and killed John with it.\nJohn fell to the ground, and Bankai rushed to him, screaming, 'John!' The doctors couldn't do anything; John was dead.")
 print(
     "Ares looked at Bankai and said, 'Don't let your tears hinder you in our next battle.' At that moment, Bankai screamed in despair, transforming all his sorrow into rage.\nBankai didn't wait for the referees to announce the start of the match; he started it himself.\nHe pushed John's body away from the arena and began their fight.")
+clear()
 print("Round Five")
 print(
     "The fight began with Bankai's weak strikes that did nothing but amuse Ares.\n'Is this the one who managed to defeat El-Haouari?' Ares raised his hand to the sky, then struck Bankai with a blow that knocked him to the ground.\nAres said, 'I told you not to let your sorrow be an obstacle, or else you will die from the next strike.'")
@@ -888,7 +932,7 @@ print(
     "After the fight, Bankai collapsed, remaining in a coma for three days.\nWhen he woke up, the doctor couldn't understand his condition during the fight and advised him to see a doctor in the city of Savana, hoping for treatment.")
 print(
     "Bankai went with his friend Martin to their friend's grave, then went to claim his prize and took the Ginseng herb he had come for.\nFinally, he packed his belongings and left the city, saddened and heartbroken by the loss of his friend.")
-
+clear()
 #the part 5 of the game
 print(
     "At night, Bankai arrived in the kingdom of Savana, the warmest of the kingdoms, this time with his friend Martin and without their friend John.\nTheir goal now was to find the Echinacea herb.\nAt first, Bankai was surprised by the warm welcome from the citizens of Savana and the large table filled with food.\nHe thought it was a festival or celebration until one of the residents approached him and said, \"Are you the Bankai who won the Hal competition? Everyone is talking about your strength and how you defeated Ares.\"\nBankai looked at the attendees and saw El-Haouari, whom he had defeated in the first round of the competition.\nHe went to talk to him, but El-Haouari refused and simply said, \"I pity you for entering this kingdom.\"\nBankai was puzzled by this remark and returned to his place with Martin.")
@@ -896,6 +940,7 @@ print(
     "Some people started talking in front of him in an unfamiliar language, their native tongue.\nFortunately, Martin understood what they were saying.\nMartin said, \"We need to leave. They want you to be the sacrifice for their monster.\"\n\nBankai: \"What sacrifice? What monster?\"\n\nMartin: \"It's a lizard-like monster that appears every year to eat a strong person, and they want you to be their sacrifice.\"\n\nBankai: \"Why?\"\n\nMartin: \"Because you're not from this kingdom, you're strong, and there are also some other requirements that I don't know about.\"\n\nBankai: \"Does that black thing that appeared during my last fight have anything to do with it?\"\n\nMartin: \"I think so.\"")
 choice = int(
     input("What is your tool you will take from the table: \n1. spoon \n2. Knife\n3. Lighter\n4. Lighter\n5. Apple\n"))
+clear()
 print(
     "Bankai and his friend quickly got up from the table to leave, but the king arrived with a senior elder who asked them where they were going, as the festivities hadn't started yet.\nBankai didn't want the locals to know that he had discovered their plan, so he sat down, pondering a way to escape.\nHe thought that the only solution might be to fight the monster.\nWithin seconds, Bankai was struck on the head and lost consciousness.\nHis friend tried to intervene but couldn't.\nWhen Bankai woke up, he found himself bound inside a stable along with the elder.\nHis friend lay on the ground, knocked out by a few blows that proved too much for him, still recovering from his fight in the Hal tournament's second round.")
 if choice == 2 or choice == 3:
@@ -910,12 +955,14 @@ else:
 print("Now Bankai is free so he should fight the elder")
 fight(Bankai0, elder, 1500, 1000, 1000)
 print("Martin: Oh no, Bankai, that elder didn't die, he transformed into a lizard now.")
+clear()
 fightl(Bankai0, lizard)
 fightl(Bankai1, lizard)
 fight(Bankai2, lizard, 40000, 30000, 30000)
 print(
     "During Bankai's fight against the elder, he transformed just as he had during the Hal competition.\nAgain, he couldn't control his power and defeated the elder, transforming into a lizard.\nHe then took the elder's severed head to the citizens of Savana, freeing them from the monster they had feared.\nThe people celebrated this victory, but Bankai soon fainted from his exertion.\nHowever, he quickly recovered, and the citizens gave him and his friend the Echinacea herb they had come for.\nNow, only one element remained: the Ginkgo Biloba herb in the Canavar Cave.\nBut before proceeding, Bankai needed to visit a doctor to understand the reason behind his mysterious power.")
 current_location = "barn"
+clear()
 while current_location != "doctor":
     print("You are at", current_location)
 
@@ -961,7 +1008,7 @@ while current_location != "doctor":
         print("Please choose a valid direction")
 
 print("Doctor: What disease did your mother suffer from?\nBankai: The doctor in Sturorm didn't want to tell me the name of the disease.\nDoctor: The medicine needs Ginseng herb, and also what else? Tell me everything about your journey.\nAfter Bankai told him about the other ingredients and how he managed to obtain them, the doctor understood his condition.\nDoctor: You are the son of the legend Mihawk, then. I see. Your mother is afflicted with Anarogia, one of the diseases that emerged after the Kaidoz war.\nAs for your power, it's a curse upon you to control it. You need to take the Sinestro glove and insert a stone into the hole in its palm.\nLuckily, I have that stone, but you will find the glove in the Yaskeena Cave located between Savana and Canavar Forest.\nYou won't find anyone to ask in Canavar, so I'll tell you where to find the last herb, Ginko Biloba.\nIt's in the Canavar Cave in the middle of the forest, inside the waterfall.\nBut be warned, your fight there will be the toughest, as its guardian won't spare you.\nAlso, as you know, the Kaidoz jar they sealed is there.\nThen he asked Bankai to leave and told his friend to stay to say a few words.\nDoctor to Martin: Keep your eyes on your friend, and don't let him fight until he finds the glove; he might die while fighting.\nYou have to fight in his place. He gave him medicine and continued, saying: Drink this medicine to heal your wounds; you are stronger than you think.\nDon't suppress your power and defend your friend with it.\nAfter these words, Martin felt that John's death was because of him.\nIf he had been stronger, he would have defeated Ares in the second round, and John wouldn't have fought in the semi-final.\nBut soon the remorse vanished, for now, he had to save his friend's mother.")
-
+clear()
 #the fifth part of the game
 
 current_location = "start"
@@ -1057,32 +1104,32 @@ while not Yaskina and not Canavar:
         print("He hadn't seen any guards since they entered the cave, but he didn't want to worry Bankai now.\nThey needed to get out of there.\n")
         print("Bankai and his friend moved from the spot, and when they reached the place where they had chosen one of the three paths, they found a man with huge muscles lying on the ground.\nBeside him were two men: one holding a knife who looked strong, and the other holding a large jar.\nThey turned towards him, and one of them said, 'Finally, your silly journey is over. Your end is now.'\nBankai recognized them; it was Ares and his friend John.")
 
-
+clear()
 #the last part of the game
 print("While Bankai and Martin were in shock, Ares smashed the jar, releasing a scream that pushed Bankai and Martin backward.\nAll the imprisoned Kaidos emerged from it, and smoke filled the entire continent of Espada.\nThe kings of the kingdoms in the continent of Espada saw this and ordered their armies to prepare for war, as the thing they had feared had come to pass.")
 print("King of the Kingdom of Shturm: \"This is our son; we must save him no matter the cost.\"")
-input("Press Enter to clear the screen...")
+input("Press Enter to continue...")
 print("King of the Kingdom of Rosenbelle: \"Now we will show our strength to protect those who shielded our kingdom. We will repay Bankai by eradicating all the Kaidos. I know the Kingdom of Suduma is involved in this; today, that kingdom will fall.\"")
-input("Press Enter to clear the screen...")
+input("Press Enter to continue...")
 print("King of the Kingdom of Winterland: \"In a war like this, my father died. Today, I will avenge him and return to marry you, Princess of Rosenbelle.\"")
-input("Press Enter to clear the screen...")
+input("")
 print("The residents of Bummer moved towards the Canavar Forest without a leader, acting with complete savagery.")
-input("Press Enter to clear the screen...")
+input("")
 print("King of the Kingdom of Savana: \"We are grateful for what Bankai did for us. He saved many lives from the lizard monster. We must thank him in our own way.\"")
-input("Press Enter to clear the screen...")
+input("")
 print("King of the Kingdom of Suduma: \"This is my chance to conquer the other kingdoms. I knew you wouldn't disappoint me, John.\"")
-input("Press Enter to clear the screen...")
+input("")
 print("Back in the cave, the man who had been lying on the ground stirred. Bankai wondered who this man could be.")
 print("Martin said, \"I recognize you now. You are the legendary Mihawk.\"")
-input("Press Enter to clear the screen...")
+input("")
 print("Bankai exclaimed, \"You are my father!\"")
-input("Press Enter to clear the screen...")
+input("")
 print("Mihawk replied, \"Are you Bankai?\"")
-input("Press Enter to clear the screen...")
+input("")
 print("The family was finally reunited, but this was not the time for conversation. They now faced a major problem: the Kaidos on one side and Ares and John on the other.")
-input("Press Enter to clear the screen...")
+input("")
 print("Mihawk, severely injured, retreated as he could barely stand.")
-input("Press Enter to clear the screen...")
+input("")
 print("\"After the union of the kingdoms, they managed to eliminate several of the Kaidos creatures, but they couldn't eradicate them all. Now, you must fight them.\"")
 print("On the other side, the fight between Martin and Ares was intense.\n")
 print("Ares was surprised by Martin's strength; he wasn't like this in the competition.")
@@ -1090,6 +1137,8 @@ print("\"In the end, Martin emerged victorious.\nJohn and Bankai were also surpr
 print("Finally, Ares died, but as Bankai tried to retrieve the glove, the king killed his friend, John, and his men from the Kingdom of Suduma joined the fight.\nUnfortunately, more than 20 seconds had passed since John's death, and it was futile to turn back time to save him.\nJohn had truly died this time, and the grief was overwhelming.\nBankai had seen his friend die twice, and this time, he held a secret in his heart.\nWhy did he collaborate with Suduma? What did this king threaten him with?\nIn a moment of anger and sorrow, with the glove not in his hand, Bankai reached a level he had never reached before.\nThe tattoos that had appeared during the Hal competition resurfaced.\nIt was the curse that had been cast on him, but this time, the curse had become even greater.\nHis power was truly incomparable.\nBlinded by anger, Martin and Mihawk took cover to avoid being killed.\nMihawk was surprised by his son's strength; he was stronger than the three combined.\nBankai rose from the ground, his voice changing to a powerful tone with a slight wave.\nThe king and 82 of the soldiers who had come with him were killed.\nBankai's power surpassed not only the three legends but even the strength of the jinn.\nHe emerged from the cave, finding the other kingdoms fighting the Kaidos creatures and winning.\nThey all fled because they knew if they crossed his path, they would be killed.")
 print("Your strength has doubled with the stone and the glove. Now, you can move to any kingdom instantly due to your speed.")
 fight(Bankai4, kaidos, 1000000, 800000, 150000)
+clear()
+
 print("you kill 11000 of the kaidos")
 current_location = "canavar"
 defeat = 0
@@ -1333,8 +1382,10 @@ while defeat < 8:
             current_location = "bummer"
         else:
             print("Please choose a valid direction")
-
+clear()
 print("You have defeated both the Kaidos and the Suduma army. Now, only the leader of the Kaidos, Canavar, remains.")
+print(dragon)
+subprocess.run('clear', shell=True)
 print("Your last battle will strat soon.")
 time.sleep(5)
 fight(Bankai4, canavar, 1000000, 800000, 800000)
@@ -1342,15 +1393,15 @@ print("finally you beat the last kaidos.")
 print("\"The battle between Bankai and the Kaidos continued for three days.\nMeanwhile, the Kingdom of Suduma withdrew after losing their king and more than 10,000 soldiers.\nThe Fifth Kaidos War, known as the Last Kaidos War, finally ended.\nIt was a conflict between the Kaidos creatures and the Kingdom of Suduma against a single person: Bankai.\"")
 print("\"When Bankai delivered his final blow, sending Canavar flying through the air, he realized it was over.\nHis anger and sorrow faded, and the curse lifted.\nHis friend Martin, his father Mihawk who was being treated, and the kings of the other kingdoms came to him as he collapsed on the ground.\"")
 print("Bankai: 'Why did you leave us, Father?'")
-input("Press Enter to clear the screen...")
+input("")
 print("Mihawk: 'I was assigned the task of guarding the Kaidos jar.'")
-input("Press Enter to clear the screen...")
+input("")
 print("Bankai: 'So, you can come back with us now, Father?'")
-input("Press Enter to clear the screen...")
+input("")
 print("Mihawk: 'Yes, I will return home with you.'")
-input("Press Enter to clear the screen...")
+input("")
 print("Bankai: 'I wish I knew why John helped the Kingdom of Suduma and what Ares told him. I know it wasn't for his own benefit; he wanted to save someone.'")
-input("Press Enter to clear the screen...")
+input("")
 print("Bankai handed his bag to Mihawk.\nBankai: 'Take this to the doctor and tell my mother my story. She will definitely enjoy it.'")
 print("Mihawk: 'Why don't you tell her yourself?'")
 print("Bankai: 'You know, Father, in the end, John and I are alike. We want to save others, and our own lives don't matter. I never considered John my enemy, and neither did he, even during our fight in the cave.'")
@@ -1360,9 +1411,16 @@ print("Bankai took his last breath. I don't think he heard his father's final wo
 #the end of the game
 
 print("In the Kingdom of Shturm:\nThe mother was cured of her illness, and a statue of Bankai was erected to honor his contribution to saving humanity from the threat of the Kaidos and the Kingdom of Suduma.\nMihawk retired from swordsmanship and had a second child, who showed the same courage as his older sibling.")
+input("")
 print("In the Kingdoms of Rosenbelle and Winterland:\nThe princess married the King of Winterland, and they had a child named Raja, after his grandfather King Raja, who died in the Kaidos war.")
+input("")
 print("In the Kingdom of Bummer:\nIt became a kingdom again after restoring the monarchy and crowning Hawari as king, since his mother was from that kingdom and they acknowledged his heroism.\nThe rules of the Hal competition were revised: weapons and lethal violence were banned, turning it into a clean competition.")
+input("")
 print("In the Kingdom of Savana:\nMartin opened a martial arts training hall to teach children what he had learned from Bankai's grandfather.")
+input("")
 print("In the Kingdom of Bits:\nThe citizens returned to rebuild their land.\nA medicine was developed that restored the Bits monsters to their human forms.")
+input("")
 print("In the Kingdom of Visors:\nNot a new kingdom, but one that had been taken over by Suduma, it regained its sovereignty after the fall of the Kingdom of Suduma.")
+input("")
 print("And thus ends our story about the hero Bankai and his journey to save his mother, which transformed into a quest to save the world.")
+
