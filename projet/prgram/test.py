@@ -222,7 +222,7 @@ class canavar:
     def __init__(self, name="canavar"):
         self.name = name
         self.power = 500000
-        self.health = 300000
+        self.health = 800000
         self.defence = 60
 
 
@@ -330,27 +330,27 @@ print(
 time.sleep(5)
 subprocess.run('clear', shell=True)
 
-slowprint("Part One: Exiting Storm City", 0.06)
-slowprint("Our story begins with a person named Kyoku Bankai.", 0.06)
-slowprint("His mother's condition worsened until he summoned a doctor, who diagnosed her with a rare illness.", 0.06)
+print("Part One: Exiting Storm City", 0.06)
+print("Our story begins with a person named Kyoku Bankai.", 0.06)
+print("His mother's condition worsened until he summoned a doctor, who diagnosed her with a rare illness.", 0.06)
 print(
     "From a remote village in the city of Sturm, he was raised by his mother and grandfather. \nHis grandfather taught him the martial arts, and he became very strong. \nAfter his grandfather passed away, his mother continued to take care of him.\nThis motivated him to keep learning combat skills so he could protect his mother.")
 time.sleep(5)
-
+current_location = "home"
 # the first part of the game
 choice = int(input(
     "What do you want to do? (1. Let's go to the market, 2. Let's go to the doctor, 3. Let's watch my mum die): "))
 
 while choice != 2:
     if choice == 1:
-        slowprint("It's not the appropriate time to go shopping; we should save my mum.", 0.06)
+        print("It's not the appropriate time to go shopping; we should save my mum.", 0.06)
         current_location = "home"
         choice = int(input())
     elif choice == 2:
-        slowprint("He must now bring the doctor to his mother. Let's go to the doctor.", 0.06)
-        current_location = "doctor"
+        print("He must now bring the doctor to his mother. Let's go to the doctor.", 0.06)
+        current_location = "home"
     elif choice == 3:
-        slowprint("Your mum has died. Thank you for wasting your money watching your mum die without playing.", 0.06)
+        print("Your mum has died. Thank you for wasting your money watching your mum die without playing.", 0.06)
         exit()
     else:
         slowprint("Invalid choice. Please try again.", 0.06)
@@ -473,7 +473,7 @@ def market_rose():
     print(
         "He asked some of the merchants in the city if anyone knew the chamomile herb. No one knew its whereabouts, but a blacksmith directed him to an old man named Jinbi who knew a lot about herbs.")
     print(
-        "Bankai went to the place of that old man, and he told him that he wouldn't tell him where it is until he answered his riddle. He said: \"He does not walk, yet he always comes. He has no eyes, yet he always sees. What is he?\"")
+        "Bankai went to the place of that old man, and he told him that he wouldn't tell him where it is until he answered his riddle. He said: \"He does not walk, yet he always comes. He has no eyes, yet he always cries. What is he?\"")
     while True:
         print("What is the correct answer:")
         print("1. Candle\n2. Cloud\n3. Moon")
@@ -662,7 +662,7 @@ if current_location == "basement":
 print(
     "Bankai saved the kingdom of Rosenbelle. \nAt first, everyone was in shock. As for the attendees from the kingdom of Suduma, it was a small delegation, and not many military figures were present to avoid arousing suspicion among the inhabitants of Rosenbelle. \nTherefore, the king of Suduma ordered the prince's body to be taken and the delegation to withdraw.")
 print(
-    "After this incident, the king invited Bancai to hear his story and was impressed by his bravery and determination to save his mother. \nThe king gave him the chamomile herb, and Bancai left the kingdom of Rosenbelle accompanied by his friend John.")
+    "After this incident, the king invited Bankai to hear his story and was impressed by his bravery and determination to save his mother. \nThe king gave him the chamomile herb, and Bankai left the kingdom of Rosenbelle accompanied by his friend John.")
 choice = int(input("Do you wanna see a doctor before you go to Winterland ?\n1. Yes\n2. No\n"))
 if choice == 1:
     Bankai.health = 100
@@ -1057,6 +1057,312 @@ while not Yaskina and not Canavar:
         print("He hadn't seen any guards since they entered the cave, but he didn't want to worry Bankai now.\nThey needed to get out of there.\n")
         print("Bankai and his friend moved from the spot, and when they reached the place where they had chosen one of the three paths, they found a man with huge muscles lying on the ground.\nBeside him were two men: one holding a knife who looked strong, and the other holding a large jar.\nThey turned towards him, and one of them said, 'Finally, your silly journey is over. Your end is now.'\nBankai recognized them; it was Ares and his friend John.")
 
-#        else:print("Please choose a valid direction")
-# print("You have reached the doctor!")
-#
+
+#the last part of the game
+print("While Bankai and Martin were in shock, Ares smashed the jar, releasing a scream that pushed Bankai and Martin backward.\nAll the imprisoned Kaidos emerged from it, and smoke filled the entire continent of Espada.\nThe kings of the kingdoms in the continent of Espada saw this and ordered their armies to prepare for war, as the thing they had feared had come to pass.")
+print("King of the Kingdom of Shturm: \"This is our son; we must save him no matter the cost.\"")
+input("Press Enter to clear the screen...")
+print("King of the Kingdom of Rosenbelle: \"Now we will show our strength to protect those who shielded our kingdom. We will repay Bankai by eradicating all the Kaidos. I know the Kingdom of Suduma is involved in this; today, that kingdom will fall.\"")
+input("Press Enter to clear the screen...")
+print("King of the Kingdom of Winterland: \"In a war like this, my father died. Today, I will avenge him and return to marry you, Princess of Rosenbelle.\"")
+input("Press Enter to clear the screen...")
+print("The residents of Bummer moved towards the Canavar Forest without a leader, acting with complete savagery.")
+input("Press Enter to clear the screen...")
+print("King of the Kingdom of Savana: \"We are grateful for what Bankai did for us. He saved many lives from the lizard monster. We must thank him in our own way.\"")
+input("Press Enter to clear the screen...")
+print("King of the Kingdom of Suduma: \"This is my chance to conquer the other kingdoms. I knew you wouldn't disappoint me, John.\"")
+input("Press Enter to clear the screen...")
+print("Back in the cave, the man who had been lying on the ground stirred. Bankai wondered who this man could be.")
+print("Martin said, \"I recognize you now. You are the legendary Mihawk.\"")
+input("Press Enter to clear the screen...")
+print("Bankai exclaimed, \"You are my father!\"")
+input("Press Enter to clear the screen...")
+print("Mihawk replied, \"Are you Bankai?\"")
+input("Press Enter to clear the screen...")
+print("The family was finally reunited, but this was not the time for conversation. They now faced a major problem: the Kaidos on one side and Ares and John on the other.")
+input("Press Enter to clear the screen...")
+print("Mihawk, severely injured, retreated as he could barely stand.")
+input("Press Enter to clear the screen...")
+print("\"After the union of the kingdoms, they managed to eliminate several of the Kaidos creatures, but they couldn't eradicate them all. Now, you must fight them.\"")
+print("On the other side, the fight between Martin and Ares was intense.\n")
+print("Ares was surprised by Martin's strength; he wasn't like this in the competition.")
+print("\"In the end, Martin emerged victorious.\nJohn and Bankai were also surprised by what had happened.\nBankai continued the fight, suddenly stopping time.\nThis was the power of the glove; Bankai could now control it.\nHe became a formidable force, stopping time, striking his opponent, then allowing time to resume, receiving a blow that doubled his strength.\nHe defeated John, incapacitating him but not killing him, as he was his friend and knew he had his own secrets.\nMartin said, 'Stop the time and prevent the jar from breaking.'\nBankai replied, 'It's impossible for us to kill all the Kaidos. If we prevent it, it won't change anything. It's not just John who wants this, but all the villains in this world, especially the Kingdom of Suduma.'\nAs they spoke, the King of Suduma sneaked up and struck Bankai's hand, causing the stone to fall.\nAs Bankai was about to stop time to kill him, he was blindsided by a blow from Ares.\nMartin retaliated, killing Ares.\"")
+print("Finally, Ares died, but as Bankai tried to retrieve the glove, the king killed his friend, John, and his men from the Kingdom of Suduma joined the fight.\nUnfortunately, more than 20 seconds had passed since John's death, and it was futile to turn back time to save him.\nJohn had truly died this time, and the grief was overwhelming.\nBankai had seen his friend die twice, and this time, he held a secret in his heart.\nWhy did he collaborate with Suduma? What did this king threaten him with?\nIn a moment of anger and sorrow, with the glove not in his hand, Bankai reached a level he had never reached before.\nThe tattoos that had appeared during the Hal competition resurfaced.\nIt was the curse that had been cast on him, but this time, the curse had become even greater.\nHis power was truly incomparable.\nBlinded by anger, Martin and Mihawk took cover to avoid being killed.\nMihawk was surprised by his son's strength; he was stronger than the three combined.\nBankai rose from the ground, his voice changing to a powerful tone with a slight wave.\nThe king and 82 of the soldiers who had come with him were killed.\nBankai's power surpassed not only the three legends but even the strength of the jinn.\nHe emerged from the cave, finding the other kingdoms fighting the Kaidos creatures and winning.\nThey all fled because they knew if they crossed his path, they would be killed.")
+print("Your strength has doubled with the stone and the glove. Now, you can move to any kingdom instantly due to your speed.")
+fight(Bankai4, kaidos, 1000000, 800000, 150000)
+print("you kill 11000 of the kaidos")
+current_location = "canavar"
+defeat = 0
+beatsa = False
+beatsu = False
+beatbi = False
+beatvir = False
+beatsh = False
+beatro = False
+beatwi = False
+beatbu = False
+while defeat < 8:
+    if current_location == "canavar":
+        print(" you beat the kaidos here let's go to another place")
+        direction = input("Where do you want to go? (savana/suduma/bits/visors/shturm/rosenbell/winterland/bummer").lower
+        if direction == "savana":
+            current_location = "savana"
+        elif direction == "suduma":
+            current_location = "savana"
+        elif direction == "bits":
+            current_location = "bits"
+        elif direction == "visors":
+            current_location = "visors"
+        elif direction == "shturm":
+            current_location = "shturm"
+        elif direction == "rosenbell":
+            current_location = "rosenbell"
+        elif direction == "winterland":
+            current_location = "winterland"
+        elif direction == "bummer":
+            current_location = "bummer"
+        else:
+            print("Please choose a valid direction")
+    elif current_location == "savana":
+        if beatsa == False:
+            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+            print("you kill 5000 of the kaidos")
+            beatsa = True
+            defeat += 1
+        direction = input(
+            "Where do you want to go? (canavar/suduma/bits/visors/shturm/rosenbell/winterland/bummer").lower
+        if direction == "canavar":
+            current_location = "canavar"
+        elif direction == "suduma":
+            current_location = "savana"
+        elif direction == "bits":
+            current_location = "bits"
+        elif direction == "visors":
+            current_location = "visors"
+        elif direction == "shturm":
+            current_location = "shturm"
+        elif direction == "rosenbell":
+            current_location = "rosenbell"
+        elif direction == "winterland":
+            current_location = "winterland"
+        elif direction == "bummer":
+            current_location = "bummer"
+        else:
+            print("Please choose a valid direction")
+    elif current_location == "bits":
+        if beatbi == False:
+            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+            print("you kill 5000 of the kaidos")
+            defeat += 1
+            beatbi = True
+        direction = input(
+            "Where do you want to go? (canavar/suduma/savana/visors/shturm/rosenbell/winterland/bummer").lower
+        if direction == "canavar":
+            current_location = "canavar"
+        elif direction == "suduma":
+            current_location = "savana"
+        elif direction == "savana":
+            current_location = "savana"
+        elif direction == "visors":
+            current_location = "visors"
+        elif direction == "shturm":
+            current_location = "shturm"
+        elif direction == "rosenbell":
+            current_location = "rosenbell"
+        elif direction == "winterland":
+            current_location = "winterland"
+        elif direction == "bummer":
+            current_location = "bummer"
+        else:
+            print("Please choose a valid direction")
+    elif current_location == "visors":
+        if beatvir == False:
+            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+            print("you kill 7000 of the kaidos")
+            beatvir = True
+            defeat += 1
+        direction = input(
+            "Where do you want to go? (canavar/suduma/bits/savana/shturm/rosenbell/winterland/bummer").lower
+        if direction == "canavar":
+            current_location = "canavar"
+        elif direction == "suduma":
+            current_location = "savana"
+        elif direction == "bits":
+            current_location = "bits"
+        elif direction == "savana":
+            current_location = "savana"
+        elif direction == "shturm":
+            current_location = "shturm"
+        elif direction == "rosenbell":
+            current_location = "rosenbell"
+        elif direction == "winterland":
+            current_location = "winterland"
+        elif direction == "bummer":
+            current_location = "bummer"
+        else:
+            print("Please choose a valid direction")
+    elif current_location == "winterland":
+        if beatwi == False:
+            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+            print("you kill 4000 of the kaidos")
+            beatwi = True
+            defeat += 1
+        direction = input(
+            "Where do you want to go? (canavar/suduma/bits/visors/shturm/rosenbell/savana/bummer").lower
+        if direction == "canavar":
+            current_location = "canavar"
+        elif direction == "suduma":
+            current_location = "savana"
+        elif direction == "bits":
+            current_location = "bits"
+        elif direction == "visors":
+            current_location = "visors"
+        elif direction == "shturm":
+            current_location = "shturm"
+        elif direction == "rosenbell":
+            current_location = "rosenbell"
+        elif direction == "savana":
+            current_location = "savana"
+        elif direction == "bummer":
+            current_location = "bummer"
+        else:
+            print("Please choose a valid direction")
+    elif current_location == "rosenbell":
+        if beatwi == False:
+            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+            print("you kill 1000 of the kaidos")
+            beatwi = True
+            defeat += 1
+        direction = input(
+            "Where do you want to go? (canavar/suduma/bits/visors/shturm/savana/savana/bummer").lower
+        if direction == "canavar":
+            current_location = "canavar"
+        elif direction == "suduma":
+            current_location = "savana"
+        elif direction == "bits":
+            current_location = "bits"
+        elif direction == "visors":
+            current_location = "visors"
+        elif direction == "shturm":
+            current_location = "shturm"
+        elif direction == "savana":
+            current_location = "savana"
+        elif direction == "savana":
+            current_location = "savana"
+        elif direction == "bummer":
+            current_location = "bummer"
+        else:
+            print("Please choose a valid direction")
+    elif current_location == "bummer":
+        if beatbu == False:
+            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+            print("you kill 6000 of the kaidos")
+            beatbu = True
+            defeat += 1
+        direction = input(
+            "Where do you want to go? (canavar/suduma/bits/visors/shturm/rosenbell/savana/bummer").lower
+        if direction == "canavar":
+            current_location = "canavar"
+        elif direction == "suduma":
+            current_location = "savana"
+        elif direction == "bits":
+            current_location = "bits"
+        elif direction == "visors":
+            current_location = "visors"
+        elif direction == "shturm":
+            current_location = "shturm"
+        elif direction == "rosenbell":
+            current_location = "rosenbell"
+        elif direction == "savana":
+            current_location = "savana"
+        elif direction == "winterland":
+            current_location = "winterland"
+        else:
+            print("Please choose a valid direction")
+    elif current_location == "shturm":
+        if beatsh == False:
+            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+            print("you kill 3000 of the kaidos")
+            beatsh = True
+            defeat += 1
+        direction = input(
+            "Where do you want to go? (canavar/suduma/bits/visors/winterland/rosenbell/savana/bummer").lower
+        if direction == "canavar":
+            current_location = "canavar"
+        elif direction == "suduma":
+            current_location = "savana"
+        elif direction == "bits":
+            current_location = "bits"
+        elif direction == "visors":
+            current_location = "visors"
+        elif direction == "winterland":
+            current_location = "winterland"
+        elif direction == "rosenbell":
+            current_location = "rosenbell"
+        elif direction == "savana":
+            current_location = "savana"
+        elif direction == "bummer":
+            current_location = "bummer"
+        else:
+            print("Please choose a valid direction")
+    elif current_location == "suduma":
+        if beatsu == False:
+            fight(Bankai4, suduma, 1000000, 800000, 150000)
+            print("you kill 8000 of the kaidos")
+            print("The Suduma army won't let you rest; you must fight them now.")
+            fight(Bankai4, kaidos, 1000000, 800000, 100000)
+            beatsu = True
+            defeat += 1
+        direction = input(
+            "Where do you want to go? (canavar/suduma/bits/visors/shturm/rosenbell/savana/bummer").lower
+        if direction == "canavar":
+            current_location = "canavar"
+        elif direction == "suduma":
+            current_location = "savana"
+        elif direction == "bits":
+            current_location = "bits"
+        elif direction == "visors":
+            current_location = "visors"
+        elif direction == "shturm":
+            current_location = "shturm"
+        elif direction == "rosenbell":
+            current_location = "rosenbell"
+        elif direction == "savana":
+            current_location = "savana"
+        elif direction == "bummer":
+            current_location = "bummer"
+        else:
+            print("Please choose a valid direction")
+
+print("You have defeated both the Kaidos and the Suduma army. Now, only the leader of the Kaidos, Canavar, remains.")
+print("Your last battle will strat soon.")
+time.sleep(5)
+fight(Bankai4, canavar, 1000000, 800000, 800000)
+print("finally you beat the last kaidos.")
+print("\"The battle between Bankai and the Kaidos continued for three days.\nMeanwhile, the Kingdom of Suduma withdrew after losing their king and more than 10,000 soldiers.\nThe Fifth Kaidos War, known as the Last Kaidos War, finally ended.\nIt was a conflict between the Kaidos creatures and the Kingdom of Suduma against a single person: Bankai.\"")
+print("\"When Bankai delivered his final blow, sending Canavar flying through the air, he realized it was over.\nHis anger and sorrow faded, and the curse lifted.\nHis friend Martin, his father Mihawk who was being treated, and the kings of the other kingdoms came to him as he collapsed on the ground.\"")
+print("Bankai: 'Why did you leave us, Father?'")
+input("Press Enter to clear the screen...")
+print("Mihawk: 'I was assigned the task of guarding the Kaidos jar.'")
+input("Press Enter to clear the screen...")
+print("Bankai: 'So, you can come back with us now, Father?'")
+input("Press Enter to clear the screen...")
+print("Mihawk: 'Yes, I will return home with you.'")
+input("Press Enter to clear the screen...")
+print("Bankai: 'I wish I knew why John helped the Kingdom of Suduma and what Ares told him. I know it wasn't for his own benefit; he wanted to save someone.'")
+input("Press Enter to clear the screen...")
+print("Bankai handed his bag to Mihawk.\nBankai: 'Take this to the doctor and tell my mother my story. She will definitely enjoy it.'")
+print("Mihawk: 'Why don't you tell her yourself?'")
+print("Bankai: 'You know, Father, in the end, John and I are alike. We want to save others, and our own lives don't matter. I never considered John my enemy, and neither did he, even during our fight in the cave.'")
+print("Mihawk: 'Our time together was short, but I admired you and your friends. I'm sorry I didn't fulfill the role of a good father.'")
+print("Bankai took his last breath. I don't think he heard his father's final words, but he died holding his father's hand tightly, like a little child. And thus, Bankai's story ended here.")
+
+#the end of the game
+
+print("In the Kingdom of Shturm:\nThe mother was cured of her illness, and a statue of Bankai was erected to honor his contribution to saving humanity from the threat of the Kaidos and the Kingdom of Suduma.\nMihawk retired from swordsmanship and had a second child, who showed the same courage as his older sibling.")
+print("In the Kingdoms of Rosenbelle and Winterland:\nThe princess married the King of Winterland, and they had a child named Raja, after his grandfather King Raja, who died in the Kaidos war.")
+print("In the Kingdom of Bummer:\nIt became a kingdom again after restoring the monarchy and crowning Hawari as king, since his mother was from that kingdom and they acknowledged his heroism.\nThe rules of the Hal competition were revised: weapons and lethal violence were banned, turning it into a clean competition.")
+print("In the Kingdom of Savana:\nMartin opened a martial arts training hall to teach children what he had learned from Bankai's grandfather.")
+print("In the Kingdom of Bits:\nThe citizens returned to rebuild their land.\nA medicine was developed that restored the Bits monsters to their human forms.")
+print("In the Kingdom of Visors:\nNot a new kingdom, but one that had been taken over by Suduma, it regained its sovereignty after the fall of the Kingdom of Suduma.")
+print("And thus ends our story about the hero Bankai and his journey to save his mother, which transformed into a quest to save the world.")
