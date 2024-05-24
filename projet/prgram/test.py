@@ -204,9 +204,6 @@ class suduma:
         self.defence = 85
 
 
-suduma = suduma()
-
-
 class kaidos:
     def __init__(self, name="kaidos"):
         self.name = name
@@ -216,6 +213,86 @@ class kaidos:
 
 
 kaidos = kaidos()
+
+class kaidosbi:
+    def __init__(self, name="kaidos"):
+        self.name = name
+        self.power = 300000
+        self.health = 150000
+        self.defence = 40
+
+
+kaidosbi = kaidosbi()
+
+class kaidosvir:
+    def __init__(self, name="kaidos"):
+        self.name = name
+        self.power = 300000
+        self.health = 150000
+        self.defence = 40
+
+
+kaidosvir = kaidosvir()
+
+class kaidosst:
+    def __init__(self, name="kaidos"):
+        self.name = name
+        self.power = 300000
+        self.health = 150000
+        self.defence = 40
+
+
+kaidosst = kaidosst()
+
+class kaidosbu:
+    def __init__(self, name="kaidos"):
+        self.name = name
+        self.power = 300000
+        self.health = 150000
+        self.defence = 40
+
+
+kaidosbu = kaidosbu()
+
+class kaidossu:
+    def __init__(self, name="kaidos"):
+        self.name = name
+        self.power = 300000
+        self.health = 150000
+        self.defence = 40
+
+
+kaidossu = kaidossu()
+
+class kaidoswi:
+    def __init__(self, name="kaidos"):
+        self.name = name
+        self.power = 300000
+        self.health = 150000
+        self.defence = 40
+
+
+kaidoswi = kaidoswi()
+
+class kaidosro:
+    def __init__(self, name="kaidos"):
+        self.name = name
+        self.power = 300000
+        self.health = 150000
+        self.defence = 40
+
+
+kaidosro = kaidosro()
+
+class kaidossa:
+    def __init__(self, name="kaidos"):
+        self.name = name
+        self.power = 300000
+        self.health = 150000
+        self.defence = 40
+
+
+kaidossa = kaidossa()
 
 
 class canavar:
@@ -556,11 +633,11 @@ while visit_john == False or visit_market == False:
 clear()
 while current_location != "castel":
     if current_location == "start":
-        direction = input("What is your next direction: \njohn\nsea\ncastel").lower()
+        direction = input("What is your next direction: \njohn\nsea\ncastle\n").lower()
         if direction == "sea":
             current_location = "sea"
-        elif direction == "castel":
-            current_location = "castel"
+        elif direction == "castle":
+            current_location = "castle"
         elif direction == "john":
             current_location = "john"
         else:
@@ -587,16 +664,6 @@ while current_location != "castel":
             current_location = "castel"
         elif direction == "start":
             current_location = "start"
-        else:
-            print("Please choose a valid direction")
-
-    elif current_location == "restaurant":
-        print("I heard people talking about a competition in a place called Hal.")
-        direction = input("What is your next direction: start\nhal\n").lower()
-        if direction == "start":
-            current_location = "start"
-        elif direction == "hal":
-            current_location = "hal"
         else:
             print("Please choose a valid direction")
 
@@ -639,7 +706,7 @@ while current_location != "basement":
 
     if current_location == "wedding":
         print("You are in the wedding now. And there is nothing here.")
-        direction = input("Where do you want to go? (window/kitchen): ")
+        direction = input("Where do you want to go? (window/kitchen): ").lower()
         if direction == "window":
             current_location = "window"
         elif direction == "kitchen":
@@ -649,7 +716,7 @@ while current_location != "basement":
 
     elif current_location == "window":
         print("You are at the window now. And there is nothing here.")
-        direction = input("Where do you want to go? (wedding/kitchen/the store): ")
+        direction = input("Where do you want to go? (wedding/kitchen/the store): ").lower()
         if direction == "wedding":
             current_location = "wedding"
         elif direction == "kitchen":
@@ -661,7 +728,7 @@ while current_location != "basement":
 
     elif current_location == "kitchen":
         print("You are in the kitchen now. And there is nothing here.")
-        direction = input("Where do you want to go? (door/wedding/basement/window): ")
+        direction = input("Where do you want to go? (door/wedding/basement/window): ").lower()
         if direction == "door":
             current_location = "door"
             print("The guard caught you. You lose!")
@@ -676,7 +743,7 @@ while current_location != "basement":
             print("Please choose a valid direction")
     elif current_location == "the store":
         print("You are in the store now. And there is nothing here.")
-        direction = input("Where do you want to go? (basement/window): ")
+        direction = input("Where do you want to go? (basement/window): ").lower()
         if direction == "basement":
             current_location = "basement"
         elif direction == "window":
@@ -939,7 +1006,7 @@ print(
 print(
     "Some people started talking in front of him in an unfamiliar language, their native tongue.\nFortunately, Martin understood what they were saying.\nMartin said, \"We need to leave. They want you to be the sacrifice for their monster.\"\n\nBankai: \"What sacrifice? What monster?\"\n\nMartin: \"It's a lizard-like monster that appears every year to eat a strong person, and they want you to be their sacrifice.\"\n\nBankai: \"Why?\"\n\nMartin: \"Because you're not from this kingdom, you're strong, and there are also some other requirements that I don't know about.\"\n\nBankai: \"Does that black thing that appeared during my last fight have anything to do with it?\"\n\nMartin: \"I think so.\"")
 choice = int(
-    input("What is your tool you will take from the table: \n1. spoon \n2. Knife\n3. Lighter\n4. Lighter\n5. Apple\n"))
+    input("What is your tool you will take from the table: \n1. spoon \n2. Knife\n3. Lighter\n4. nothing\n5. Apple\n"))
 clear()
 print(
     "Bankai and his friend quickly got up from the table to leave, but the king arrived with a senior elder who asked them where they were going, as the festivities hadn't started yet.\nBankai didn't want the locals to know that he had discovered their plan, so he sat down, pondering a way to escape.\nHe thought that the only solution might be to fight the monster.\nWithin seconds, Bankai was struck on the head and lost consciousness.\nHis friend tried to intervene but couldn't.\nWhen Bankai woke up, he found himself bound inside a stable along with the elder.\nHis friend lay on the ground, knocked out by a few blows that proved too much for him, still recovering from his fight in the Hal tournament's second round.")
@@ -967,7 +1034,7 @@ while current_location != "doctor":
     print("You are at", current_location)
 
     if current_location == "barn":
-        direction = input("Where do you want to go? (doctor/diner place): ").lower
+        direction = input("Where do you want to go? (doctor/diner place): ").lower()
         if direction == "doctor":
             current_location = "doctor"
         elif direction == "diner place":
@@ -1010,17 +1077,16 @@ while current_location != "doctor":
 print("Doctor: What disease did your mother suffer from?\nBankai: The doctor in Sturorm didn't want to tell me the name of the disease.\nDoctor: The medicine needs Ginseng herb, and also what else? Tell me everything about your journey.\nAfter Bankai told him about the other ingredients and how he managed to obtain them, the doctor understood his condition.\nDoctor: You are the son of the legend Mihawk, then. I see. Your mother is afflicted with Anarogia, one of the diseases that emerged after the Kaidoz war.\nAs for your power, it's a curse upon you to control it. You need to take the Sinestro glove and insert a stone into the hole in its palm.\nLuckily, I have that stone, but you will find the glove in the Yaskeena Cave located between Savana and Canavar Forest.\nYou won't find anyone to ask in Canavar, so I'll tell you where to find the last herb, Ginko Biloba.\nIt's in the Canavar Cave in the middle of the forest, inside the waterfall.\nBut be warned, your fight there will be the toughest, as its guardian won't spare you.\nAlso, as you know, the Kaidoz jar they sealed is there.\nThen he asked Bankai to leave and told his friend to stay to say a few words.\nDoctor to Martin: Keep your eyes on your friend, and don't let him fight until he finds the glove; he might die while fighting.\nYou have to fight in his place. He gave him medicine and continued, saying: Drink this medicine to heal your wounds; you are stronger than you think.\nDon't suppress your power and defend your friend with it.\nAfter these words, Martin felt that John's death was because of him.\nIf he had been stronger, he would have defeated Ares in the second round, and John wouldn't have fought in the semi-final.\nBut soon the remorse vanished, for now, he had to save his friend's mother.")
 clear()
 #the fifth part of the game
-
 current_location = "start"
 print("you should go to Yaskina cave to get the sinestro golve  ")
 
 Yaskina = False
 Canavar = False
 
-while not Yaskina and not Canavar:
+while not Yaskina or not Canavar:
 
     if current_location == "start":
-        direction = input("Where do you want to go? (mushroom/yaskina").lower
+        direction = input("Where do you want to go? (mushroom/yaskina)").lower()
         if direction == "mushroom":
             current_location = "mushroom"
         elif direction == "yaskina":
@@ -1028,15 +1094,17 @@ while not Yaskina and not Canavar:
         else:
             print("Please choose a valid direction")
     elif current_location == "mushroom":
+        choice = 0
         while choice != 1 or choice != 2:
-            choice = int(input("Do you wanna eat the mushroom:\n1. Yes\n2. No"))
+            choice = int(input("Do you wanna eat the mushroom:\n1. Yes\n2. No\n"))
             if choice == 1:
                 print("Ooh this mushroom decrease you health.")
             elif choice == 2:
                 pass
+                break
             else:
                 print("Invalid choice please try again")
-        direction = input("Where do you want to go? (canavar/start").lower
+        direction = input("Where do you want to go? (canavar/start)").lower()
         if direction == "canavar":
             current_location = "canavar"
         elif direction == "start":
@@ -1049,14 +1117,27 @@ while not Yaskina and not Canavar:
         time.sleep(1)
         print("Martin couldn't beat the monster and he need your help")
         print("Now you should fight the monster by yourself")
-        fightl(Bankai,monsterY)
-        fight(Bankai3,monsterY, 100000, 50000, 100000)
+        fightl(Bankai, monsterY)
+        fight(Bankai3, monsterY, 100000, 50000, 100000)
         Yaskina = True
-
+        direction = input("Where do you want to go? (canavar/start)").lower()
+        if direction == "canavar":
+            current_location = "canavar"
+        elif direction == "start":
+            current_location = "start"
+        else:
+            print("Please choose a valid direction")
 
     elif current_location == "canavar":
-        if not Yaskina:
+        if Yaskina == False:
             print("There nothing we can do here i think we should go to Yaskina cave first as the doctor said")
+            direction = input("Where do you want to go? (yaskina/mushroom)").lower()
+            if direction == "yaskina":
+                current_location = "yaskina"
+            elif direction == "mushroom":
+                current_location = "mushroom"
+            else:
+                print("Please choose a valid direction")
         else:
             print(
                 "The monster was finally defeated, and Bankai took the gauntlet.\nWhen he placed the stone into the hole in the palm of his hand, a lightning bolt struck his hand, causing him great pain.\nHowever, he felt an immense power surge through him, doubling his strength.\nAfter taking hits from that monster, he now feels that he can defeat any being.\nThat is what he believes.")
@@ -1071,38 +1152,53 @@ while not Yaskina and not Canavar:
             print("2. The second path is marked, 'He who sees the unseen will find the key to enter the illusion.'")
             print(
                 "3. The third path is marked, 'He who seeks salvation, let him follow the lone star in the sea of darkness.'")
-        while choice != 1 or choice != 2:
-            choice = int(input("Do you wanna hear the discussion between Bankai and Martin :\n1. Yes\n2. No"))
+            choice = 0
+            while choice != 1 or choice != 2:
+                choice = int(input("Do you wanna hear the discussion between Bankai and Martin :\n1. Yes\n2. No"))
+                if choice == 1:
+                    print("Martin said: What will you choose, Bankai?")
+                    print("Bankai: I don't know. If we choose the wrong path, we might die.")
+                    print("Martin said: The first path brings the dead back to life. Don’t you think it’s the one since the herb is medicinal and heals those who were about to die? What does the phrase 'yellow sky' mean?")
+                    print("Bankai: I’m not sure, but it might refer to the Kaidos monsters.")
+                    print("Martin said: What about the second path? I think the 'key to the illusion' refers to the vicious circle.")
+                    print("Bankai: But it could also mean the Kaidos monsters.")
+                    print("Martin said: Or it might refer to the disease we want to cure your mother from.")
+                    print("Bankai: What does 'salvation' mean in the phrase for the third path?")
+                    print("Martin said: I think it means our way out of this problem and finding the herb.")
+                    print("Bankai: Or maybe it talks to those inside who couldn’t get out, implying that their salvation is impossible. I think it’s the final loop.")
+                    print("Martin said: Or maybe it means the salvation of the Kaidos monsters from their prison.")
+                    break
+                elif choice == 2:
+                    pass
+                    break
+                else:
+                    print("Invalid choice please try again")
             if choice == 1:
-                pass
-            elif choice == 2:
-                pass
+                print("Martin said, 'What will you choose, Bankai?' Bankai replied, 'I don’t know. If we choose the wrong path, we might die.' Martin said, 'The first path revives the dead. Don’t you think that might be it since the herb is medicinal and can heal someone who is about to die? What does the term 'yellow sky' mean?' Bankai responded, 'I’m not sure, but it might refer to the Kaidos monsters.' Martin said, 'What about the second path? I think the key to enter the illusion might refer to the endless loop.' Bankai replied, 'But it could also mean the Kaidos monsters.' Martin said, 'Or perhaps it refers to the disease we want to cure your mother from.' Bankai asked, 'What does salvation mean in the context of the third path?' Martin replied, 'I think it’s our way out of this predicament and finding the herb.' Bankai said, 'Or maybe it’s telling those inside that their salvation is impossible, meaning it’s the endless loop.' Martin concluded, 'Or perhaps it means the salvation of the Kaidos monsters from their prison.'")
             else:
-                print("Invalid choice please try again")
-        if choice == 1:
-            print("Martin said, 'What will you choose, Bankai?' Bankai replied, 'I don’t know. If we choose the wrong path, we might die.' Martin said, 'The first path revives the dead. Don’t you think that might be it since the herb is medicinal and can heal someone who is about to die? What does the term 'yellow sky' mean?' Bankai responded, 'I’m not sure, but it might refer to the Kaidos monsters.' Martin said, 'What about the second path? I think the key to enter the illusion might refer to the endless loop.' Bankai replied, 'But it could also mean the Kaidos monsters.' Martin said, 'Or perhaps it refers to the disease we want to cure your mother from.' Bankai asked, 'What does salvation mean in the context of the third path?' Martin replied, 'I think it’s our way out of this predicament and finding the herb.' Bankai said, 'Or maybe it’s telling those inside that their salvation is impossible, meaning it’s the endless loop.' Martin concluded, 'Or perhaps it means the salvation of the Kaidos monsters from their prison.'")
-        else:
-            pass
-        while choice != 1 or choice != 2 or choice != 3:
-            choice = int(input("So what is your choice : \n1. First path\n2. Second path\n3. Third path"))
-            if choice == 1:
-                print("Your choice was successful. The first path was the correct answer")
-            elif choice == 2:
-                print(
-                    "Your choice was wrong. This path leads to the Kaidos monsters, and now they are free. You have lost")
-                exit()
-            elif choice == 3:
-                print(
-                    "Your choice was wrong. This path leads to the endless loop, and now you cannot escape from it. You have lost.")
-                exit()
-            else:
-                print("Invalid choice please try again.")
+                pass
+            while choice != 1 or choice != 2 or choice != 3:
+                choice = int(input("So what is your choice : \n1. First path\n2. Second path\n3. Third path"))
+                if choice == 1:
+                    print("Your choice was successful. The first path was the correct answer")
+                    Canavar = True
+                    break
+                elif choice == 2:
+                    print(
+                        "Your choice was wrong. This path leads to the Kaidos monsters, and now they are free. You have lost")
+                    exit()
+                elif choice == 3:
+                    print(
+                        "Your choice was wrong. This path leads to the endless loop, and now you cannot escape from it. You have lost.")
+                    exit()
+                else:
+                    print("Invalid choice please try again.")
 
-        print("Bankai took the herb and was overjoyed; their journey was finally over.\nAt last, he would save his mother.\n")
-        print("However, his friend Martin felt something strange.\n")
-        print("Didn't that doctor from the Kingdom of Savana tell them that the cave had strong guards?\nHe hadn't seen any guards since they entered the cave, but he didn't want to worry Bankai now.\nThey needed to get out of there.\n")
-        print("He hadn't seen any guards since they entered the cave, but he didn't want to worry Bankai now.\nThey needed to get out of there.\n")
-        print("Bankai and his friend moved from the spot, and when they reached the place where they had chosen one of the three paths, they found a man with huge muscles lying on the ground.\nBeside him were two men: one holding a knife who looked strong, and the other holding a large jar.\nThey turned towards him, and one of them said, 'Finally, your silly journey is over. Your end is now.'\nBankai recognized them; it was Ares and his friend John.")
+            print("Bankai took the herb and was overjoyed; their journey was finally over.\nAt last, he would save his mother.\n")
+            print("However, his friend Martin felt something strange.\n")
+            print("Didn't that doctor from the Kingdom of Savana tell them that the cave had strong guards?\nHe hadn't seen any guards since they entered the cave, but he didn't want to worry Bankai now.\nThey needed to get out of there.\n")
+            print("He hadn't seen any guards since they entered the cave, but he didn't want to worry Bankai now.\nThey needed to get out of there.\n")
+            print("Bankai and his friend moved from the spot, and when they reached the place where they had chosen one of the three paths, they found a man with huge muscles lying on the ground.\nBeside him were two men: one holding a knife who looked strong, and the other holding a large jar.\nThey turned towards him, and one of them said, 'Finally, your silly journey is over. Your end is now.'\nBankai recognized them; it was Ares and his friend John.")
 
 clear()
 #the last part of the game
@@ -1153,11 +1249,11 @@ beatbu = False
 while defeat < 8:
     if current_location == "canavar":
         print(" you beat the kaidos here let's go to another place")
-        direction = input("Where do you want to go? (savana/suduma/bits/visors/shturm/rosenbell/winterland/bummer").lower
+        direction = input("Where do you want to go? (savana/suduma/bits/visors/shturm/rosenbell/winterland/bummer)").lower()
         if direction == "savana":
             current_location = "savana"
         elif direction == "suduma":
-            current_location = "savana"
+            current_location = "suduma"
         elif direction == "bits":
             current_location = "bits"
         elif direction == "visors":
@@ -1174,16 +1270,17 @@ while defeat < 8:
             print("Please choose a valid direction")
     elif current_location == "savana":
         if beatsa == False:
-            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+            fight(Bankai4, kaidossa, 1000000, 800000, 150000)
             print("you kill 5000 of the kaidos")
             beatsa = True
             defeat += 1
+        print(" you beat the kaidos here let's go to another place")
         direction = input(
-            "Where do you want to go? (canavar/suduma/bits/visors/shturm/rosenbell/winterland/bummer").lower
+            "Where do you want to go? (canavar/suduma/bits/visors/shturm/rosenbell/winterland/bummer)").lower()
         if direction == "canavar":
             current_location = "canavar"
         elif direction == "suduma":
-            current_location = "savana"
+            current_location = "suduma"
         elif direction == "bits":
             current_location = "bits"
         elif direction == "visors":
@@ -1200,16 +1297,17 @@ while defeat < 8:
             print("Please choose a valid direction")
     elif current_location == "bits":
         if beatbi == False:
-            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+            fight(Bankai4, kaidosbi, 1000000, 800000, 150000)
             print("you kill 5000 of the kaidos")
             defeat += 1
             beatbi = True
+        print(" you beat the kaidos here let's go to another place")
         direction = input(
-            "Where do you want to go? (canavar/suduma/savana/visors/shturm/rosenbell/winterland/bummer").lower
+            "Where do you want to go? (canavar/suduma/savana/visors/shturm/rosenbell/winterland/bummer)").lower()
         if direction == "canavar":
             current_location = "canavar"
         elif direction == "suduma":
-            current_location = "savana"
+            current_location = "suduma"
         elif direction == "savana":
             current_location = "savana"
         elif direction == "visors":
@@ -1226,16 +1324,17 @@ while defeat < 8:
             print("Please choose a valid direction")
     elif current_location == "visors":
         if beatvir == False:
-            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+            fight(Bankai4, kaidosvir, 1000000, 800000, 150000)
             print("you kill 7000 of the kaidos")
             beatvir = True
             defeat += 1
+        print(" you beat the kaidos here let's go to another place")
         direction = input(
-            "Where do you want to go? (canavar/suduma/bits/savana/shturm/rosenbell/winterland/bummer").lower
+            "Where do you want to go? (canavar/suduma/bits/savana/shturm/rosenbell/winterland/bummer)").lower()
         if direction == "canavar":
             current_location = "canavar"
         elif direction == "suduma":
-            current_location = "savana"
+            current_location = "suduma"
         elif direction == "bits":
             current_location = "bits"
         elif direction == "savana":
@@ -1252,16 +1351,17 @@ while defeat < 8:
             print("Please choose a valid direction")
     elif current_location == "winterland":
         if beatwi == False:
-            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+            fight(Bankai4, kaidoswi, 1000000, 800000, 150000)
             print("you kill 4000 of the kaidos")
             beatwi = True
             defeat += 1
+        print(" you beat the kaidos here let's go to another place")
         direction = input(
-            "Where do you want to go? (canavar/suduma/bits/visors/shturm/rosenbell/savana/bummer").lower
+            "Where do you want to go? (canavar/suduma/bits/visors/shturm/rosenbell/savana/bummer)").lower()
         if direction == "canavar":
             current_location = "canavar"
         elif direction == "suduma":
-            current_location = "savana"
+            current_location = "suduma"
         elif direction == "bits":
             current_location = "bits"
         elif direction == "visors":
@@ -1277,17 +1377,18 @@ while defeat < 8:
         else:
             print("Please choose a valid direction")
     elif current_location == "rosenbell":
-        if beatwi == False:
-            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+        if beatro == False:
+            fight(Bankai4, kaidosro, 1000000, 800000, 150000)
             print("you kill 1000 of the kaidos")
-            beatwi = True
+            beatro = True
             defeat += 1
+        print(" you beat the kaidos here let's go to another place")
         direction = input(
-            "Where do you want to go? (canavar/suduma/bits/visors/shturm/savana/savana/bummer").lower
+            "Where do you want to go? (canavar/suduma/bits/visors/shturm/savana/winterland/bummer)").lower()
         if direction == "canavar":
             current_location = "canavar"
         elif direction == "suduma":
-            current_location = "savana"
+            current_location = "suduma"
         elif direction == "bits":
             current_location = "bits"
         elif direction == "visors":
@@ -1296,24 +1397,25 @@ while defeat < 8:
             current_location = "shturm"
         elif direction == "savana":
             current_location = "savana"
-        elif direction == "savana":
-            current_location = "savana"
+        elif direction == "winterland":
+            current_location = "winterland"
         elif direction == "bummer":
             current_location = "bummer"
         else:
             print("Please choose a valid direction")
     elif current_location == "bummer":
         if beatbu == False:
-            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+            fight(Bankai4, kaidosbu, 1000000, 800000, 150000)
             print("you kill 6000 of the kaidos")
             beatbu = True
             defeat += 1
+        print(" you beat the kaidos here let's go to another place")
         direction = input(
-            "Where do you want to go? (canavar/suduma/bits/visors/shturm/rosenbell/savana/bummer").lower
+            "Where do you want to go? (canavar/suduma/bits/visors/shturm/rosenbell/savana/winterland)").lower()
         if direction == "canavar":
             current_location = "canavar"
         elif direction == "suduma":
-            current_location = "savana"
+            current_location = "suduma"
         elif direction == "bits":
             current_location = "bits"
         elif direction == "visors":
@@ -1330,16 +1432,17 @@ while defeat < 8:
             print("Please choose a valid direction")
     elif current_location == "shturm":
         if beatsh == False:
-            fight(Bankai4, kaidos, 1000000, 800000, 150000)
+            fight(Bankai4, kaidosst, 1000000, 800000, 150000)
             print("you kill 3000 of the kaidos")
             beatsh = True
             defeat += 1
+        print(" you beat the kaidos here let's go to another place")
         direction = input(
-            "Where do you want to go? (canavar/suduma/bits/visors/winterland/rosenbell/savana/bummer").lower
+            "Where do you want to go? (canavar/suduma/bits/visors/winterland/rosenbell/savana/bummer)").lower()
         if direction == "canavar":
             current_location = "canavar"
         elif direction == "suduma":
-            current_location = "savana"
+            current_location = "suduma"
         elif direction == "bits":
             current_location = "bits"
         elif direction == "visors":
@@ -1356,18 +1459,20 @@ while defeat < 8:
             print("Please choose a valid direction")
     elif current_location == "suduma":
         if beatsu == False:
-            fight(Bankai4, suduma, 1000000, 800000, 150000)
+            suduma = suduma()
+            fight(Bankai4, kaidossu, 1000000, 800000, 150000)
             print("you kill 8000 of the kaidos")
             print("The Suduma army won't let you rest; you must fight them now.")
-            fight(Bankai4, kaidos, 1000000, 800000, 100000)
+            fight(Bankai4, suduma, 1000000, 800000, 100000)
             beatsu = True
             defeat += 1
+        print(" you beat the kaidos here let's go to another place")
         direction = input(
-            "Where do you want to go? (canavar/suduma/bits/visors/shturm/rosenbell/savana/bummer").lower
+            "Where do you want to go? (canavar/winterland/bits/visors/shturm/rosenbell/savana/bummer)").lower()
         if direction == "canavar":
             current_location = "canavar"
-        elif direction == "suduma":
-            current_location = "savana"
+        elif direction == "winterland":
+            current_location = "winterland"
         elif direction == "bits":
             current_location = "bits"
         elif direction == "visors":
@@ -1423,4 +1528,3 @@ input("")
 print("In the Kingdom of Visors:\nNot a new kingdom, but one that had been taken over by Suduma, it regained its sovereignty after the fall of the Kingdom of Suduma.")
 input("")
 print("And thus ends our story about the hero Bankai and his journey to save his mother, which transformed into a quest to save the world.")
-
