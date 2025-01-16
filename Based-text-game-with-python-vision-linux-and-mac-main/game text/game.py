@@ -11,10 +11,8 @@ def clear():
     else:  # Unix/Linux/MacOS
         subprocess.run('clear', shell=True)
 
-
 def lucky():
     return random.randrange(0, 100)
-
 
 def slowprint(sentence, x):
     for char in sentence:
@@ -22,14 +20,12 @@ def slowprint(sentence, x):
         time.sleep(x)
     print()
 
-
 class Bankai:
     def __init__(self):
         self.name = "Bankai"
         self.power = 100
         self.health = 100
         self.defence = 30
-
 
 Bankai = Bankai()
 
