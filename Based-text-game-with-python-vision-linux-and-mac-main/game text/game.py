@@ -59,9 +59,7 @@ class Ares:
         self.health = 1200
         self.defence = 50
 
-
 Ares = Ares()
-
 
 class haouari:
     def __init__(self, name="El-haouari"):
@@ -70,9 +68,7 @@ class haouari:
         self.health = 250
         self.defence = 70
 
-
 haouari = haouari()
-
 
 class enemy:
     def __init__(self, name="the enemy"):
@@ -81,9 +77,7 @@ class enemy:
         self.health = 300
         self.defence = 40
 
-
 enemy = enemy()
-
 
 class strenemy:
     def __init__(self, name="strong enemy"):
@@ -92,9 +86,7 @@ class strenemy:
         self.health = 500
         self.defence = 30
 
-
 strenemy = strenemy()
-
 
 class martin:
     def __init__(self, name="martin"):
@@ -103,9 +95,7 @@ class martin:
         self.health = 450
         self.defence = 20
 
-
 martin = martin()
-
 
 class elder:
     def __init__(self, name="the elder"):
@@ -114,9 +104,7 @@ class elder:
         self.health = 1000
         self.defence = 30
 
-
 elder = elder()
-
 
 class lizard:
     def __init__(self, name="the lizard"):
@@ -124,7 +112,6 @@ class lizard:
         self.power = 20000
         self.health = 30000
         self.defence = 48
-
 
 lizard = lizard()
 
@@ -136,7 +123,6 @@ class monsterY:
         self.defence = 34
 monsterY = monsterY()
 
-
 class Bankai0:
     def __init__(self, name="Bankai with form of Kaidoz"):
         self.name = name
@@ -144,9 +130,7 @@ class Bankai0:
         self.health = 1000
         self.defence = 50
 
-
 Bankai0 = Bankai0()
-
 
 class Bankai1:
     def __init__(self, name="Bankai with the first form of Kaidoz"):
@@ -155,9 +139,7 @@ class Bankai1:
         self.health = 30000
         self.defence = 50
 
-
 Bankai1 = Bankai1()
-
 
 class Bankai2:
     def __init__(self, name="Bankai with the second form of Kaidoz"):
@@ -166,9 +148,7 @@ class Bankai2:
         self.health = 40000
         self.defence = 50
 
-
 Bankai2 = Bankai2()
-
 
 class Bankai3:
     def __init__(self, name="Bankai with the third form of Kaidoz"):
