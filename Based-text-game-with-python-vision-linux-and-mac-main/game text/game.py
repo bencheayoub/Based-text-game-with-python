@@ -157,9 +157,7 @@ class Bankai3:
         self.health = 100000
         self.defence = 50
 
-
 Bankai3 = Bankai3()
-
 
 class Bankai4:
     def __init__(self, name="Bankai with the third form of Kaidoz"):
