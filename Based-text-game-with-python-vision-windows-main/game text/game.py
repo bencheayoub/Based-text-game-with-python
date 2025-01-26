@@ -224,6 +224,7 @@ class kaidosbi:
 
 kaidosbi = kaidosbi()
 
+
 class kaidosvir:
     def __init__(self, name="kaidos"):
         self.name = name
@@ -233,6 +234,7 @@ class kaidosvir:
 
 
 kaidosvir = kaidosvir()
+
 
 class kaidosst:
     def __init__(self, name="kaidos"):
@@ -244,6 +246,7 @@ class kaidosst:
 
 kaidosst = kaidosst()
 
+
 class kaidosbu:
     def __init__(self, name="kaidos"):
         self.name = name
@@ -254,6 +257,7 @@ class kaidosbu:
 
 kaidosbu = kaidosbu()
 
+
 class kaidossu:
     def __init__(self, name="kaidos"):
         self.name = name
@@ -263,6 +267,7 @@ class kaidossu:
 
 
 kaidossu = kaidossu()
+
 
 class kaidoswi:
     def __init__(self, name="kaidos"):
