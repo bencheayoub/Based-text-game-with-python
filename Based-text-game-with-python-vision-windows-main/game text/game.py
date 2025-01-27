@@ -282,6 +282,7 @@ class kaidoswi:
 
 kaidoswi = kaidoswi()
 
+
 class kaidosro:
     def __init__(self, name="kaidos"):
         self.name = name
@@ -291,6 +292,7 @@ class kaidosro:
 
 
 kaidosro = kaidosro()
+
 
 class kaidossa:
     def __init__(self, name="kaidos"):
