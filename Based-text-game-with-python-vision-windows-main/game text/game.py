@@ -4,6 +4,7 @@ import subprocess
 import random
 from Arts import *
 
+
 def clear():
     input("Press Enter to clear the screen...")
     if os.name == 'nt':  # Windows
@@ -138,6 +139,8 @@ class monsterY:
         self.power = 30000
         self.health = 100000
         self.defence = 34
+
+
 monsterY = monsterY()
 
 
