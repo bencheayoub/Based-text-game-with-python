@@ -98,7 +98,6 @@ class strenemy:
         self.defence = 30
 
 
-
 strenemy = strenemy()
 
 
